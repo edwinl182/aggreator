@@ -982,8 +982,8 @@ input[type="button"]:focus {
 }
 .nav-pills > li.active > a:after {
   content: '';
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   display: inline-block;
   position: absolute;
@@ -1342,7 +1342,7 @@ input[type="button"]:focus {
 
 /*---------------------------------------------------- form div styles-------------------------------------------------*/
 
-#home, #vehicle, #office, #home-2, #vehicle-2, #office-2, #home-3, #vehicle-3, #office-3{
+#home, #vehicle, #office, #home-2, #vehicle-2, #office-2, #home-3, #vehicle-3, #office-3, #home-4, #vehicle-4, #office-4{
   display: none;
   text-align:center
 }
@@ -1409,3 +1409,17 @@ input[type="button"]:focus {
     min-width: 140px;
   }
 }
+
+
+/*------------------------------------------------------pic move style-------------------------------------------------------*/
+.pic-move,.details{
+  border:1px solid black;
+  padding: 25px;
+}
+.details-section{
+  background-color: grey;
+  height:200px;
+  width:100%;
+  margin: 0px;
+}
+/*------------------------------------------------pic move style end---------------------------------------------------------*/
