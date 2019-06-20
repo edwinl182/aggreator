@@ -1,0 +1,7 @@
+.form-section{
+	min-height: 100vh;
+	max-height: auto;
+	text-align: center;
+	background-color: lightgrey;
+	transition: 2s;
+}

@@ -1,0 +1,377 @@
+html{
+	font-size: 16px;
+	margin:0px; 
+	padding: 0px;
+
+}
+body{
+	margin:0px;
+	padding: 0px;
+	width: 100%;
+	height:100%;
+	font-family: Voces;
+}
+
+/*--------------------------------------header section--------------------------------(section 1)-------------------------*/
+.navbar-brand{
+	font-size: 2.5rem;
+}
+.nav-item{
+	padding: 1.5rem;
+}
+.navbar-collapse{
+	justify-content: flex-end;
+}
+
+
+.section1{
+	min-height: 100vh;
+}
+.header-image img{
+	padding-top: 25%;
+	height: 450px;
+	width: 650px;
+}
+
+.estimate-region{
+	text-align: center;
+	padding-top: 15%;
+}
+.estimate-region h1{
+	font-size: 3.5rem;
+	padding: 10px;
+}
+.estimate-region p{
+	font-size: 1.2rem;
+	padding: 10px;
+}
+.estimate-region button{
+	background-color: #61ce70;
+	outline: none;
+	padding: 10px;
+	border:0px;
+	color: white;
+	font-weight: 500;
+	transition: .5s;
+	width: 200px;
+}
+.estimate-region button:hover{
+	transform: scale(1.1,1.1);
+	transition: .5s;
+}
+@media only screen and (max-width: 420px) {
+.section1{
+		min-height: 50vh;
+}
+.estimate-region h1{
+    font-size: 2.2rem;
+  }
+.estimate-region p{
+	font-size: 1rem;
+}
+}
+
+/*--------------------------------------header section-----------------------------(section 1)----------------------------*/
+
+/*--------------------------------------About us ----------------------------------(section 2)=-----------------*/
+
+.section2{
+	min-height: 100vh;
+}
+.aboutus{
+	text-align:center;
+	padding-top: 20%;
+}
+.aboutus h1{
+	text-align:center;
+	font-size: 2rem;
+  	margin-bottom: 2.5rem;
+}
+.aboutus p{
+	text-align:center;
+	font-size: .9rem;
+	margin-top: 2.5rem;
+  	margin-bottom: 2.5rem;
+}
+.aboutus hr{ 
+  display: flex;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  width:150px;
+  border-radius: 50px;
+  border-width: 4px;
+  background-color: #61ce70;
+}
+.aboutus h4{
+	font-size: 1.3rem;
+	margin-top: 2.5rem;
+  	margin-bottom: 2.5rem;
+}
+
+@media only screen and (max-width:420px){
+.section2{
+	min-height: 50vh;
+}
+.aboutus h1{
+	text-align:center;
+	font-size: 1.5rem;
+  	margin-bottom: 2.5rem;
+}
+.aboutus p{
+	text-align:center;
+	font-size: .9rem;
+	margin-top: 2.5rem;
+  	margin-bottom: 2.5rem;
+}
+.aboutus hr{ 
+  display: flex;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  width:100px;
+  border-radius: 50px;
+  border-width: 4px;
+  background-color: #61ce70;
+}
+.aboutus h4{
+	font-size: 1rem;
+	margin-top: 2.5rem;
+  	margin-bottom: 2.5rem;
+}
+}
+/*--------------------------------------About us end ----------------------------------(section 2)=-----------------*/
+
+/*------------------------------------ourmission style-----------------------------(section 3)--------------------------------*/
+
+.section3{
+	min-height: 75vh;	
+	background-color: white;
+}
+
+.section3 img{
+	padding: 20px;
+	height: 350px;
+	width: 550px;
+	background-color: white;
+	background:rgba(0,0,0,0.03);
+}
+.image-section{
+	
+	text-align: center;
+	padding: 30px;
+
+}
+.content-section{
+	
+	padding: 50px;
+	text-align: justify;
+}
+.content-section i{
+	font-size: 1.5rem;
+}
+.content-section i, h3{
+	font-size: 1.3rem;
+	font-weight: 800;
+	padding: 10px;
+	color: #61ce70;
+}
+.content-section p{
+	font-size: 1rem;
+	color: #888888;
+	padding: 15px;
+}
+@media(max-width:1180px){
+.section3 img{
+	height: 300px;
+	width: 400px;
+	margin-top: 50px;
+}
+}
+@media(max-width:1080px){
+.section3 img{
+	height: 250px;
+	width: 350px;
+	margin-top: 50px;
+}
+.content-section i, h3{
+
+	font-size: 1.3rem;
+	font-weight: 800;
+	padding: 10px;
+	align-content: center;
+}
+.content-section p{
+	font-size: 1rem;
+	color: #888888;
+	padding: 15px;
+}
+}
+@media(max-width: 980px){
+.content-section i, h3{
+
+	padding: 10px;
+	align-content: center;
+	font-size: 1.3rem;
+	font-weight: 800;
+}
+.content-section p{
+	font-size: 1rem;
+	color: #888888;
+	padding: 15px;
+}
+}
+@media(max-width:620px){
+.section3 img{
+	margin-top: 120px;
+	height: 150px;
+	width: 250px;
+}
+.content-section i, h3{
+
+	padding: 10px;
+	align-content: center;
+	font-size: 1.3rem;
+	font-weight: 800;
+}
+.content-section p{
+	font-size: .8rem;
+	color: #888888;
+	padding: 15px;
+}
+}
+@media(max-width:620px){
+.section3 img{
+	margin-top: 0px;
+	height: 150px;
+	width: 250px;
+}	
+}
+/*------------------------------------ourmission style end-----------------------------(section 3)--------------------------------*/
+
+
+/*=====================================social media style--------------------------------(section 4)--------------------------------*/
+
+.section4{
+	min-height: 20vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-image:url("images/social-background.jpg");
+}
+.social-media{
+	background:rgba(0,0,0,0.5);
+	height: 20vh;
+	width: 100%;
+	
+
+}
+.social-media i{
+	font-size: 1.2rem;
+	background-color: #61ce70;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	padding: 10px;
+	border-radius: 50px;
+}
+.icons{
+	text-align: center;
+	display: flex;
+	padding: 40px;
+	justify-content: space-around;
+}
+/*=====================================social media style  end--------------------------------(section 4)--------------------------------*/
+
+.section5{
+	min-height: 80vh;
+	background-color:white;
+}
+.address-map, .address-area{
+	padding-top: 30px;
+}
+.map-area,.address-area{
+	padding:50px; 
+}
+.add{
+	padding: 10px;
+	display: flex;
+}
+.add i{
+	font-size: 1.5rem;
+	color: #61ce70;
+	padding: 10px;
+}
+.add p{
+	padding: 10px;
+}
+
+@media (max-width: 1180px){
+	.add h1{
+		font-size: 2rem;
+	}
+.add i{
+	font-size: 1.5rem;
+	color: #61ce70;
+	padding: 10px;
+}
+.add p{
+	padding: 10px;
+}
+}
+@media (max-width: 1080px){
+	.add h1{
+		font-size: 2rem;
+	}
+.add i{
+	font-size: 1.5rem;
+	color: #61ce70;
+	padding: 10px;
+}
+.add p{
+	padding: 10px;
+}
+}
+@media (max-width: 980px){
+	.add h1{
+		font-size: 1.8rem;
+	}
+.add i{
+	font-size: 1.5rem;
+	color: #61ce70;
+	padding: 10px;
+}
+.add p{
+	padding: 10px;
+	font-size: 1.5rem
+}
+}
+@media (max-width: 620px){
+	.add h1{
+		font-size: 1.8rem;
+	}
+.add i{
+	font-size: 1rem;
+	color: #61ce70;
+	padding: 10px;
+}
+.add p{
+	padding: 10px;
+	font-size: 1rem;
+}
+}
+@media (max-width: 420px){
+	.add h1{
+		font-size: 1.8rem;
+	}
+.add i{
+	font-size: 1rem;
+	color: #61ce70;
+	padding: 10px;
+}
+.add p{
+	padding: 10px;
+	font-size: .8rem;
+}
+}
