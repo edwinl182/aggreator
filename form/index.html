@@ -11,7 +11,8 @@
     <!-- bootstrap link-------------------- -->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+	 <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="App.css" rel="stylesheet" />
 
     <!-- bootstrap link end-------------------- -->
 
@@ -104,7 +105,7 @@
 		                                    <div class="col-sm-8 col-sm-offset-2">
 		                                        <div class="col-sm-4">
 		                                            <div class="choice" data-toggle="wizard-radio">
-		                                                <input id="div-1" type="radio" name="property" value="Design">
+		                                                <input id="div-1" type="radio" name="property" value="house" class='btn btn-next'>
 		                                                <div class="card card-checkboxes card-hover-effect">
 		                                                    <i class="ti-home"></i>
 															<p>House</p>
@@ -113,7 +114,7 @@
 		                                        </div>
 		                                        <div class="col-sm-4">
 		                                            <div class="choice" data-toggle="wizard-radio">
-		                                                <input id="div-2" type="radio" name="property" value="Code">
+		                                                <input id="div-2" type="radio" name="property" value="Vehicle" class='btn btn-next'>
 		                                                <div class="card card-checkboxes card-hover-effect">
 		                                                    <i class="ti-truck"></i>
 															<p>Vehicle</p>
@@ -122,7 +123,7 @@
 		                                        </div>
 		                                        <div class="col-sm-4">
 		                                            <div class="choice" data-toggle="wizard-radio">
-		                                                <input id="div-3" type="radio" name="property" value="Develop">
+		                                                <input id="div-3" type="radio" name="property" value="Commercial" class='btn btn-next'>
 		                                                <div class="card card-checkboxes card-hover-effect">
 		                                                    <i class="ti-headphone-alt"></i>
 															<p>Commercial</p>
@@ -138,7 +139,115 @@
 		                            <div class="tab-pane" id="about">
 		                            	<h5 class="info-text"> Where are you moving ?</h5>
 		                            		<div id="home">
-											  <div class="row row-body">
+
+													<div class="row row-body">
+															<div class="col-sm-4 offset-2">
+																<input type="radio" name="citytype" id="withincity" value="Within the city" onclick=" showcity()" >&nbsp;Within City
+															</div>
+															<div class="col-sm-4">
+																<input type="radio" name="citytype" id="betweencity" value="Between the city" onclick="showcity1()">&nbsp;Between City 
+															</div>
+													</div>
+
+													<form method="POST">
+														<div class="row"id="within">
+															<div class="col-sm-2" id="cityselect">
+																<div class="form-group">
+																<label for="exampleFormControlSelect1">Select city</label>
+																<select class="form-control" id="selectcity">
+																	<option>bengalore</option>
+																	<option>chennai</option>
+																</select>
+																</div>
+															</div>
+
+															<div class="col-sm-3">
+																<div class="form-group">
+																<label for="exampleFormControlInput1">From</label>
+																<input type="text" id="from" placeholder="Origin" class="form-control">
+																</div>
+															</div>
+
+															<div class="col-sm-3">
+																<div class="form-group">
+																		<label for="exampleFormControlInput1">To</label>
+																		<input type="text" id="to" placeholder="Destination" class="form-control">
+																</div>
+															</div>
+
+															<div class="col-sm-2">
+																<div class="form-group">
+																	<label for="exampleFormControlSelect1">Move Size</label>
+																	<select class="form-control" id="movesize">
+																	<option>1 BHK</option>
+																	<option>2 BHK</option>
+																	<option>3 BHK</option>
+																	</select>
+															  	</div>
+															</div>
+
+															<div class="col-sm-2">
+																<div class="form-group">
+																<label for="exampleFormControlTextarea1">Calender</label>
+																<input type="date"class="form-control" id="Calender">
+																</div>
+															</div>
+														</div>
+													</form> 
+
+
+
+													<!-- betweeen city ---------------->
+
+													<!-- <form method="POST">
+															<div class="row" id="between">
+																<div class="col-sm-2">
+																	<div class="form-group">
+																	<label for="exampleFormControlSelect1">Select city</label>
+																	<select class="form-control" id="selectcity">
+																		<option>bengalore</option>
+																		<option>chennai</option>
+																	</select>
+																	</div>
+																</div>
+	
+																<div class="col-sm-3">
+																	<div class="form-group">
+																	<label for="exampleFormControlInput1">From</label>
+																	<input type="text" id="from2" placeholder="Origin" class="form-control">
+																	</div>
+																</div>
+	
+																<div class="col-sm-3">
+																	<div class="form-group">
+																			<label for="exampleFormControlInput1">To</label>
+																			<input type="text" id="to2" placeholder="Destination" class="form-control">
+																	</div>
+																</div>
+	
+																<div class="col-sm-3">
+																	<div class="form-group">
+																		<label for="exampleFormControlSelect1">Move Size</label>
+																		<select class="form-control" id="movesize">
+																		<option>1 BHK</option>
+																		<option>2 BHK</option>
+																		<option>3 BHK</option>
+																		</select>
+																	  </div>
+																</div>
+	
+																<div class="col-sm-3">
+																	<div class="form-group">
+																	<label for="exampleFormControlTextarea1">Calender</label>
+																	<input type="date"class="form-control" id="Calender">
+																	</div>
+																</div>
+															</div>
+													</form>  -->
+
+													<!-- between city end----------- -->
+
+											  <!-- <div class="row row-body">
 											  	<div class="col-sm-4 offset-2">
 											  		<input type="radio" name="citytype" id="withincity"> Within the city
 											  	</div>
@@ -148,7 +257,7 @@
 											  </div>
 		
 
-												<div class="row row-body">
+												<div class="row row-body" id="between-og">
 
 													<div class="col-sm-2">
 														<div class="form-group">
@@ -159,15 +268,7 @@
 																<option value=""hidden>Select City</option>
 																<option name="city" value="Bengalore">Bengalore</option>
 															</select>
-															
-
-															<select id ="between" name="city" type="text" class="form-control" style="display: none">
-																<option value=""hidden>Select City</option>
-																<option name="city" value="Bengalore">Bengalore</option>
-																<option name="city" value="Chennai">Chennai</option>
-																<option name="city" value="Delhi">Delhi</option>
-																<option name="city" value="Kolkata">Kolkata</option>
-															</select>
+														
 														</div>
 													</div>
 
@@ -200,6 +301,40 @@
 														</div>
 													</div>
 												</div>
+
+												---------------------------------------------------------between cities---------------------------------- -->
+													<div class="row row-body" id="between-alter" style="display: none;">
+														<div class="col-sm-3">
+															<div class="form-group">
+																<input name="movingfrom" type="text" class="form-control" placeholder="Current Location...">
+															</div>
+														</div>
+
+														<div class="col-sm-3">
+															<div class="form-group">
+																<input name="movingto" type="text" class="form-control" placeholder="Destination Location...">
+															</div>
+														</div>
+
+														<div class="col-sm-3">
+															<div class="form-group">
+																<select name="Property-size" type="text" class="form-control">
+																	<option value=""hidden>property size...</option>
+																	<option name="Property-size" value="1 BHK">1 BHK</option>
+																	<option name="Property-size" value="1 BHK">2 BHK</option>
+																	<option name="Property-size" value="1 BHK">3 BHK</option>
+																</select>
+															</div>
+														</div>
+
+														<div class="col-sm-3">
+															<div class="form-group">
+																<input name="date" type="date" class="form-control" placeholder="Pic a date...">
+															</div>
+														</div>
+													</div>
+													<!-- --------------------------------------------------------------between cities ------------------------------->
+
 											</div>
 
 <!-- ================================================= vehicle========================================================== -->
@@ -215,7 +350,7 @@
 											  </div>
 
 
-											  <div class="row row-body">
+											  <div class="row row-body" id="between-og2">
 
 													<div class="col-sm-2">
 														<div class="form-group">
@@ -227,14 +362,6 @@
 																<option name="city" value="Bengalore">Bengalore</option>
 															</select>
 															
-
-															<select id ="between-2" name="city" type="text" class="form-control" style="display: none">
-																<option value=""hidden>Select City</option>
-																<option name="city" value="Bengalore">Bengalore</option>
-																<option name="city" value="Chennai">Chennai</option>
-																<option name="city" value="Delhi">Delhi</option>
-																<option name="city" value="Kolkata">Kolkata</option>
-															</select>
 														</div>
 													</div>
 
@@ -268,6 +395,38 @@
 													</div>
 												</div>
 
+												<!-- ---------------------------------------------------------between cities---------------------------------- -->
+													<div class="row row-body" id="between-alter2" style="display: none;">
+														<div class="col-sm-3">
+															<div class="form-group">
+																<input name="movingfrom" type="text" class="form-control" placeholder="Current Location...">
+															</div>
+														</div>
+
+														<div class="col-sm-3">
+															<div class="form-group">
+																<input name="movingto" type="text" class="form-control" placeholder="Destination Location...">
+															</div>
+														</div>
+
+														<div class="col-sm-3">
+															<div class="form-group">
+																<select name="Vehicle-size" type="text" class="form-control">
+																<option value=""hidden>Vehicle size...</option>
+																<option name="vehicle-size" value="Bike">Bike</option>
+																<option name="vehicle-size" value="Car">Car</option>
+																<option name="vehicle-size" value="Heavy Vehicle">Heavy Vehicle</option>
+															</select>
+															</div>
+														</div>
+
+														<div class="col-sm-3">
+															<div class="form-group">
+																<input name="date" type="date" class="form-control" placeholder="Pic a date...">
+															</div>
+														</div>
+													</div>
+													<!-- --------------------------------------------------------------between cities ------------------------------->
 											</div>
 
 
@@ -285,7 +444,7 @@
 											  </div>
 
 
-											  <div class="row row-body">
+											  <div class="row row-body" id="between-og3">
 
 													<div class="col-sm-2">
 														<div class="form-group">
@@ -297,14 +456,6 @@
 																<option name="city" value="Bengalore">Bengalore</option>
 															</select>
 															
-
-															<select id ="between-3" name="city" type="text" class="form-control" style="display: none">
-																<option value=""hidden>Select City</option>
-																<option name="city" value="Bengalore">Bengalore</option>
-																<option name="city" value="Chennai">Chennai</option>
-																<option name="city" value="Delhi">Delhi</option>
-																<option name="city" value="Kolkata">Kolkata</option>
-															</select>
 														</div>
 													</div>
 
@@ -338,26 +489,161 @@
 													</div>
 												</div>
 
-											</div>											
+
+
+												<!-- ---------------------------------------------------------between cities---------------------------------- -->
+													<div class="row row-body" id="between-alter3" style="display: none;">
+														<div class="col-sm-3">
+															<div class="form-group">
+																<input name="movingfrom" type="text" class="form-control" placeholder="Current Location...">
+															</div>
+														</div>
+
+														<div class="col-sm-3">
+															<div class="form-group">
+																<input name="movingto" type="text" class="form-control" placeholder="Destination Location...">
+															</div>
+														</div>
+
+														<div class="col-sm-3">
+															<div class="form-group">
+																<select name="Property-size" type="text" class="form-control">
+																	<option value=""hidden>property size...</option>
+																	<option name="Property-size" value="1 BHK">1 BHK</option>
+																	<option name="Property-size" value="1 BHK">2 BHK</option>
+																	<option name="Property-size" value="1 BHK">3 BHK</option>
+																</select>
+															</div>
+														</div>
+
+														<div class="col-sm-3">
+															<div class="form-group">
+																<input name="date" type="date" class="form-control" placeholder="Pic a date...">
+															</div>
+														</div>
+													</div>
+													<!-- --------------------------------------------------------------between cities ------------------------------->
+												</div>											
 		                            </div>
 
 <!---------------------------------------------------------------------------- next tab-------------------------------------------------------------------------  -->
 		                            <div class="tab-pane" id="address">
-		                            	<h5 class="info-text">Where are you moving ?</h5>
+		                            	<h5 class="info-text">What type of moving help do you need ?</h5>
 				                            		<div id="home-2">
-													  <h1>hi i am div home-2</h1>
+													  <div class="row">
+													  	<div class="col-sm-6 pic-move">
+													  		<dov class="row preferredmovers">
+													  			<input type="radio" name="picmove" value="Packers and movers" >&nbsp; Packers and movers &nbsp;
+													  			
+													  		</dov>
+													  		<dov class="row preferredmovers">
+													  			<input type="radio" name="picmove"value="Moving Labours" >&nbsp; Moving Labours
+													  		</dov>
+													  		<dov class="row preferredmovers">
+													  			<input type="radio" name="picmove"value="Moving Labours, Boxes and Supplies" >&nbsp; Moving Labours, Boxes and Supplies
+													  		</dov>
+													  		<dov class="row preferredmovers">
+													  			<input type="radio" name="picmove"value="Truck Rentals" >&nbsp; Truck Rentals
+													  		</dov>
+													  	</div>
+
+													  	<div class="col-sm-6 details">
+													  		<div class="row details-section">
+
+																<div class="col-sm-12">
+																		<table class="table" id="regtable">
+																				<thead>
+																				
+																				</thead>
+																				<tbody>
+																					
+																				</tbody>
+																		</table>
+																			<div class="row">
+																				<div class="col-sm-12">
+																						<div id="output">
+
+																						</div>
+																				</div>
+																			</div>
+																</div>	
+
+																<div class="col-sm-12">
+																		<div id="googleMap">
+
+																			</div>
+																	</div>	
+													  			
+																<table class="table" id="regtable">
+																		<thead>
+																		
+																		</thead>
+																		<tbody>
+																	
+																		</tbody>
+																</table>
+													  		</div>
+													  	</div>
+
+													  </div>
 													</div>
 
 													<div id="vehicle-2">
-													  <h1>hi i am div vehicle-2</h1>
+													    <div class="row">
+													  	<div class="col-sm-6 pic-move">
+													  		<dov class="row">
+													  			<input type="radio" name="picmove" value="Packers and movers">&nbsp; Packers and movers &nbsp;(Packing,Loading,Shipment,Unloading and Uploading)
+													  			
+													  		</dov>
+													  		<dov class="row">
+													  			<input type="radio" name="picmove"value="Moving Labours">&nbsp; Moving Labours
+													  		</dov>
+													  		<dov class="row">
+													  			<input type="radio" name="picmove"value="Moving Labours, Boxes and Supplies">&nbsp; Moving Labours, Boxes and Supplies
+													  		</dov>
+													  		<dov class="row">
+													  			<input type="radio" name="picmove"value="Truck Rentals">&nbsp; Truck Rentals
+													  		</dov>
+													  	</div>
+
+													  	<div class="col-sm-6 details">
+													  		<div class="row details-section">
+													  			<!-- summary section -->
+													  		</div>
+													  	</div>
+
+													  </div>
 													</div>
 
 													<div id="office-2">
-													  <h1>hi i am div office-2</h1>
+													    <div class="row">
+													  	<div class="col-sm-6 pic-move">
+													  		<dov class="row">
+													  			<input type="radio" name="picmove" value="Packers and movers">&nbsp; Packers and movers &nbsp;(Packing,Loading,Shipment,Unloading and Uploading)
+													  			
+													  		</dov>
+													  		<dov class="row">
+													  			<input type="radio" name="picmove"value="Moving Labours">&nbsp; Moving Labours
+													  		</dov>
+													  		<dov class="row">
+													  			<input type="radio" name="picmove"value="Moving Labours, Boxes and Supplies">&nbsp; Moving Labours, Boxes and Supplies
+													  		</dov>
+													  		<dov class="row">
+													  			<input type="radio" name="picmove"value="Truck Rentals">&nbsp; Truck Rentals
+													  		</dov>
+													  	</div>
+
+													  	<div class="col-sm-6 details">
+													  		<div class="row details-section">
+													  			<!-- summary section -->
+													  		</div>
+													  	</div>
+
+													  </div>
 													</div>						
 		                            </div>
 <!-- --------------------------------------------------------------next tab----------------------------------------------------------------------------------------- -->
-		                            <div class="tab-pane" id="item">
+		                            <div class="tab-pane" id="items">
 			                            	<h5 class="info-text"> Please tell us more about yourself.</h5>
 			                            		<div id="home-3">
 												  <h1>hi i am div home-3</h1>
@@ -375,25 +661,25 @@
 
 		                            <div class="tab-pane" id="getquote">
 			                            	<h5 class="info-text"> Please tell us more about yourself.</h5>
-			                            		<div id="home-3">
-												  <h1>hi i am div home-3</h1>
+			                            		<div id="home-4">
+												  <h1>hi i am div home-4</h1>
 												</div>
 
-												<div id="vehicle-3">
-												  <h1>hi i am div vehicle-3</h1>
+												<div id="vehicle-4">
+												  <h1>hi i am div vehicle-4</h1>
 												</div>
 
-												<div id="office-3">
-												  <h1>hi i am div office-3</h1>
+												<div id="office-4">
+												  <h1>hi i am div office-4</h1>
 												</div>											
 		                            </div>
 
 
 		                        </div>
 <!-- ---------------------------------------------------------------------tab section ends--------------------------------------------------------------------------- -->
-		                        <div class="wizard-footer">
+		                        <div class="wizard-footer" id="nxt-btn" style="display: none;">
 		                            <div class="pull-right">
-		                                <input type='button' style="border:none;outline: 0px" class='btn btn-next btn-fill btn-warning btn-wd' name='next' value='Next'/>
+		                                <input type='button' style="border:none;outline: 0px" class='btn btn-next btn-fill btn-warning btn-wd' name='next' onclick="calcRoute(); onregister();" value='Next'/>
 		                                <input type='button' style="border:none;outline: 0px" class='btn btn-finish btn-fill btn-warning btn-wd' name='finish' value='Estimate Quote' />
 		                            </div>
 
@@ -430,36 +716,57 @@
 											document.getElementById("home").style.display="block";
 											document.getElementById("home-2").style.display="block";
 											document.getElementById("home-3").style.display="block";
+											document.getElementById("home-4").style.display="block";
+
 											document.getElementById("vehicle").style.display="none";
 											document.getElementById("vehicle-2").style.display="none";
 											document.getElementById("vehicle-3").style.display="none";
+											document.getElementById("vehicle-4").style.display="none";
+
 											document.getElementById("office").style.display="none";
 											document.getElementById("office-2").style.display="none";
 											document.getElementById("office-3").style.display="none";
+											document.getElementById("office-4").style.display="none";
+
+											document.getElementById("nxt-btn").style.display="block";
 											}
 
 											function disp2(){
 											document.getElementById("home").style.display="none";
 											document.getElementById("home-2").style.display="none";
 											document.getElementById("home-3").style.display="none";
+											document.getElementById("home-4").style.display="none";
+
 											document.getElementById("vehicle").style.display="block";
 											document.getElementById("vehicle-2").style.display="block";
 											document.getElementById("vehicle-3").style.display="block";
+											document.getElementById("vehicle-4").style.display="block";
+
 											document.getElementById("office").style.display="none";
 											document.getElementById("office-2").style.display="none";
 											document.getElementById("office-3").style.display="none";
+											document.getElementById("office-4").style.display="none";
+
+											document.getElementById("nxt-btn").style.display="block";
 											}
 
 											function disp3(){
 											document.getElementById("home").style.display="none";
 											document.getElementById("home-2").style.display="none";
 											document.getElementById("home-3").style.display="none";
+											document.getElementById("home-4").style.display="none";
+
 											document.getElementById("vehicle").style.display="none";
 											document.getElementById("vehicle-2").style.display="none";
 											document.getElementById("vehicle-3").style.display="none";
+											document.getElementById("vehicle-4").style.display="none";
+
 											document.getElementById("office").style.display="block";
 											document.getElementById("office-2").style.display="block";
 											document.getElementById("office-3").style.display="block";
+											document.getElementById("office-4").style.display="block";
+
+											document.getElementById("nxt-btn").style.display="block";
 											}
 											</script>
 
@@ -469,42 +776,181 @@
 
 <!-- --------------------------------------------------------------select city type script---------------------------------------------------------------------------------------- -->
 <script type="text/javascript">
-	$("input:radio[id=withincity]").click(function(){
-		showcity();
-	});
+	// $("input:radio[id=withincity]").click(function(){
+	// 	showcity();
+	// });
 
-	$("input:radio[id=betweencity]").click(function(){
-		showcity1();
-	});
+	// $("input:radio[id=betweencity]").click(function(){
+	// 	showcity1();
+	// });
+
 
 
 	function showcity(){
-		document.getElementById("within").style.display="block";
-		document.getElementById("within-2").style.display="block";
-		document.getElementById("within-3").style.display="block";
-		document.getElementById("between").style.display="none";
-		document.getElementById("between-2").style.display="none";
-		document.getElementById("between-3").style.display="none";
-		document.getElementById("none").style.display="none";
-		document.getElementById("none-2").style.display="none";
-		document.getElementById("none-3").style.display="none";
+		// document.getElementById("within").style.display="block";
+		// document.getElementById("between").style.display="none";
+		document.getElementById("cityselect").style.display="block";
 	}
 
 	function showcity1(){
-		document.getElementById("within").style.display="none";
-		document.getElementById("within-2").style.display="none";
-		document.getElementById("within-3").style.display="none";
-		document.getElementById("between").style.display="block";
-		document.getElementById("between-2").style.display="block";
-		document.getElementById("between-3").style.display="block";
-		document.getElementById("none").style.display="none";
-		document.getElementById("none-2").style.display="none";
-		document.getElementById("none-3").style.display="none";
+		// document.getElementById("within").style.display="none";
+		// document.getElementById("between").style.display="block";
+		document.getElementById("cityselect").style.display="none";
 	}
+	
+
+
+	// function showcity(){
+	// 	document.getElementById("between-og").style.display="block";
+	// 	document.getElementById("within").style.display="block";
+
+	// 	document.getElementById("between-og2").style.display="block";
+	// 	document.getElementById("within-2").style.display="block";
+
+	// 	document.getElementById("between-og3").style.display="block";
+	// 	document.getElementById("within-3").style.display="block";
+
+	// 	document.getElementById("between-alter").style.display="none";
+	// 	document.getElementById("between-alter2").style.display="none";
+	// 	document.getElementById("between-alter3").style.display="none";
+
+	// 	document.getElementById("none").style.display="none";
+	// 	document.getElementById("none-2").style.display="none";
+	// 	document.getElementById("none-3").style.display="none";
+	// }
+
+	// function showcity1(){
+	// 	document.getElementById("between-og").style.display="none";
+	// 	document.getElementById("within").style.display="none";
+
+	// 	document.getElementById("between-og2").style.display="none";
+	// 	document.getElementById("within-2").style.display="none";
+
+	// 	document.getElementById("between-og3").style.display="none";
+	// 	document.getElementById("within-3").style.display="none";
+
+	// 	document.getElementById("between-alter").style.display="block";
+	// 	document.getElementById("between-alter2").style.display="block";
+	// 	document.getElementById("between-alter3").style.display="block";
+
+
+	// 	document.getElementById("none").style.display="none";
+	// 	document.getElementById("none-2").style.display="none";
+	// 	document.getElementById("none-3").style.display="none";
+	// }
 
 
 </script>
-<!-- --------------------------------------------------------------select city type script end---------------------------------------------------------------------------------------- -->
+
+
+<script>
+
+        // var detailsArray=[];
+        var objectdata={};
+
+        
+
+       
+		var table=document.getElementById("regtable");
+            var row1=table.insertRow();
+            var row2=table.insertRow();
+            var row3=table.insertRow();
+            var row4=table.insertRow();
+            var row5=table.insertRow();
+
+            var selectCityCell=row1.insertCell(0);
+            var fromCell=row2.insertCell(0);
+            var toCell=row3.insertCell(0);
+            var moveSizeCell=row4.insertCell(0);
+            var calenderCell=row5.insertCell(0);
+
+
+        // console.log(objectdata);
+
+        // var de=Object.assign({},detailsArray);s
+
+        function onregister(){
+
+			
+			var movetype=document.querySelector('input[name=property]:checked').value;
+			
+			var citytype=document.querySelector('input[name=citytype]:checked').value;
+
+            var selectCity=document.getElementById("selectcity").value;
+            var from=document.getElementById("from").value;
+            var to=document.getElementById("to").value;
+            var moveSize=document.getElementById("movesize").value;
+            var calender=document.getElementById("Calender").value;
+			
+
+
+			
+
+            var details={movetype:movetype,citytype:citytype,selectCity:selectCity,from:from,to:to,moveSize:moveSize,calender:calender};
+            var jsondetails=JSON.stringify(details);
+            // detailsArray.push(jsondetails);
+            
+            
+            objectdata=jsondetails;
+
+            console.log(objectdata);
+
+
+       
+
+            selectCityCell.innerHTML= "<b>SELECT CITY:</b> &nbsp; &nbsp;" + selectCity;
+            fromCell.innerHTML="<b>FROM:</b> &nbsp; &nbsp;" + from;
+            toCell.innerHTML= "<b>TO:</b> &nbsp; &nbsp;" + to;
+            moveSizeCell.innerHTML="<b>MOVE SIZE:</b> &nbsp; &nbsp;" + moveSize;
+            calenderCell.innerHTML="<b>DATE:</b> &nbsp; &nbsp;" + calender;
+
+            document.getElementById("selectcity").value="";
+            document.getElementById("from").value="";
+            document.getElementById("to").value="";
+            document.getElementById("movesize").value="";
+            document.getElementById("Calender").value="";
+
+        }
+        
+	</script>
+	
+	<!-- <script>
+	 function mapandonregister(){
+		onregister(),
+		calcRoute()
+	 }
+	
+	</script> -->
+
+
+
+
+
+<!-- ---------------------------------------phone number script------------------------------------- -->
+<script>
+        function isInputNumber(evt){
+            var ch = String.fromCharCode(evt.which);
+            
+            if(!(/[0-9]/.test(ch))){
+                evt.preventDefault();
+            }
+        }
+</script>
+<!-- --------------------------------phone number script end--------------------------------------------------- -->
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuZOC4rw7Uu9JIr4_rcT0rwl--mhBWLaQ&libraries=places"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+	<script src="Main1.js"></script>
+	<script src="Main2.js"></script>
+
+
+
+<!-- --------------------------------------------------------------select city type script end-------------------------------------------------------- -->
 
 
 
@@ -522,11 +968,6 @@
 
 	<!--  More information about jquery.validate here: https://jqueryvalidation.org/	 -->
 	<script src="assets/js/jquery.validate.min.js" type="text/javascript"></script>
-
-
-
-
-
 
 
 
