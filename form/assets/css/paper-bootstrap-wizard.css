@@ -1413,13 +1413,36 @@ input[type="button"]:focus {
 
 /*------------------------------------------------------pic move style-------------------------------------------------------*/
 .pic-move,.details{
-  border:1px solid black;
-  padding: 25px;
+  border:1px solid #61ce70;
+  /* padding: 25px; */padding: 0px;
+  
 }
 .details-section{
-  background-color: grey;
-  height:200px;
+  background-color: #61ce70;
+  height:450px;
   width:100%;
   margin: 0px;
+  
 }
 /*------------------------------------------------pic move style end---------------------------------------------------------*/
+
+#between{
+  display: none;
+}
+
+#within{
+  justify-content:center;
+}
+
+.preferredmovers{
+  /* margin-top:20px; 
+  margin-left: 40px; */
+  padding: 35px;
+  
+  font-size: 2rem;
+}
+
+#regtable{
+  text-align: start;
+}
+
