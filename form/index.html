@@ -193,164 +193,81 @@
 																</div>
 															</div>
 														</div>
-													</form> 
-
-
-
-													<!-- betweeen city ---------------->
-
-													<!-- <form method="POST">
-															<div class="row" id="between">
-																<div class="col-sm-2">
-																	<div class="form-group">
-																	<label for="exampleFormControlSelect1">Select city</label>
-																	<select class="form-control" id="selectcity">
-																		<option>bengalore</option>
-																		<option>chennai</option>
-																	</select>
-																	</div>
-																</div>
-	
-																<div class="col-sm-3">
-																	<div class="form-group">
-																	<label for="exampleFormControlInput1">From</label>
-																	<input type="text" id="from2" placeholder="Origin" class="form-control">
-																	</div>
-																</div>
-	
-																<div class="col-sm-3">
-																	<div class="form-group">
-																			<label for="exampleFormControlInput1">To</label>
-																			<input type="text" id="to2" placeholder="Destination" class="form-control">
-																	</div>
-																</div>
-	
-																<div class="col-sm-3">
-																	<div class="form-group">
-																		<label for="exampleFormControlSelect1">Move Size</label>
-																		<select class="form-control" id="movesize">
-																		<option>1 BHK</option>
-																		<option>2 BHK</option>
-																		<option>3 BHK</option>
-																		</select>
-																	  </div>
-																</div>
-	
-																<div class="col-sm-3">
-																	<div class="form-group">
-																	<label for="exampleFormControlTextarea1">Calender</label>
-																	<input type="date"class="form-control" id="Calender">
-																	</div>
-																</div>
-															</div>
-													</form>  -->
-
-													<!-- between city end----------- -->
-
-											  <!-- <div class="row row-body">
-											  	<div class="col-sm-4 offset-2">
-											  		<input type="radio" name="citytype" id="withincity"> Within the city
-											  	</div>
-											  	<div class="col-sm-4">
-											  		<input type="radio" name="citytype" id="betweencity"> Between the city
-											  	</div>
-											  </div>
-		
-
-												<div class="row row-body" id="between-og">
-
-													<div class="col-sm-2">
-														<div class="form-group">
-															<input type="text" class="form-control" name="none" id="none" placeholder="Select city..">
-
-
-															<select id ="within" name="city" type="text" class="form-control" style="display: none">
-																<option value=""hidden>Select City</option>
-																<option name="city" value="Bengalore">Bengalore</option>
-															</select>
-														
-														</div>
-													</div>
-
-													<div class="col-sm-3">
-														<div class="form-group">
-															<input name="movingfrom" type="text" class="form-control" placeholder="Current Location...">
-														</div>
-													</div>
-
-													<div class="col-sm-3">
-														<div class="form-group">
-															<input name="movingto" type="text" class="form-control" placeholder="Destination Location...">
-														</div>
-													</div>
-
-													<div class="col-sm-2">
-														<div class="form-group">
-															<select name="Property-size" type="text" class="form-control">
-																<option value=""hidden>property size...</option>
-																<option name="Property-size" value="1 BHK">1 BHK</option>
-																<option name="Property-size" value="1 BHK">2 BHK</option>
-																<option name="Property-size" value="1 BHK">3 BHK</option>
-															</select>
-														</div>
-													</div>
-
-													<div class="col-sm-2">
-														<div class="form-group">
-															<input name="date" type="date" class="form-control" placeholder="Pic a date...">
-														</div>
-													</div>
-												</div>
-
-												---------------------------------------------------------between cities---------------------------------- -->
-													<div class="row row-body" id="between-alter" style="display: none;">
-														<div class="col-sm-3">
-															<div class="form-group">
-																<input name="movingfrom" type="text" class="form-control" placeholder="Current Location...">
-															</div>
-														</div>
-
-														<div class="col-sm-3">
-															<div class="form-group">
-																<input name="movingto" type="text" class="form-control" placeholder="Destination Location...">
-															</div>
-														</div>
-
-														<div class="col-sm-3">
-															<div class="form-group">
-																<select name="Property-size" type="text" class="form-control">
-																	<option value=""hidden>property size...</option>
-																	<option name="Property-size" value="1 BHK">1 BHK</option>
-																	<option name="Property-size" value="1 BHK">2 BHK</option>
-																	<option name="Property-size" value="1 BHK">3 BHK</option>
-																</select>
-															</div>
-														</div>
-
-														<div class="col-sm-3">
-															<div class="form-group">
-																<input name="date" type="date" class="form-control" placeholder="Pic a date...">
-															</div>
-														</div>
-													</div>
-													<!-- --------------------------------------------------------------between cities ------------------------------->
+													</form> 										
 
 											</div>
 
 <!-- ================================================= vehicle========================================================== -->
 
 											<div id="vehicle">
-											  <div class="row row-body">
+											  <!-- <div class="row row-body">
 											  	<div class="col-sm-4 offset-2">
-											  		<input type="radio" name="citytype" id="withincity"> Within the city
+											  		<input type="radio" name="citytype" id="withincity" required="required"> Within the city
 											  	</div>
 											  	<div class="col-sm-4">
-											  		<input type="radio" name="citytype" id="betweencity"> Between the city
+											  		<input type="radio" name="citytype" id="betweencity" required="required"> Between the city
 											  	</div>
-											  </div>
+											  </div> -->
 
 
-											  <div class="row row-body" id="between-og2">
+											  <div class="row row-body">
+													<div class="col-sm-4 offset-2">
+														<input type="radio" name="citytype1" id="withincity1" value="Within the city"  >&nbsp;Within City
+													</div>
+													<div class="col-sm-4">
+														<input type="radio" name="citytype1" id="betweencity1" value="Between the city" >&nbsp;Between City 
+													</div>
+											</div>
+
+											
+													<div class="row"id="within1">
+														<div class="col-sm-2" id="cityselect1">
+															<div class="form-group">
+															<label for="exampleFormControlSelect1">Select city</label>
+															<select class="form-control" id="selectcity1">
+																<option>bengalore</option>
+																<option>chennai</option>
+															</select>
+															</div>
+														</div>
+
+														<div class="col-sm-3">
+															<div class="form-group">
+															<label for="exampleFormControlInput1">From</label>
+															<input type="text" id="from1" placeholder="Origin" class="form-control">
+															</div>
+														</div>
+
+														<div class="col-sm-3">
+															<div class="form-group">
+																	<label for="exampleFormControlInput1">To</label>
+																	<input type="text" id="to1" placeholder="Destination" class="form-control">
+															</div>
+														</div>
+
+														<div class="col-sm-2">
+															<div class="form-group">
+																<label for="exampleFormControlSelect1">Move Size</label>
+																<select class="form-control" id="movesize1">
+																<option>1 BHK</option>
+																<option>2 BHK</option>
+																<option>3 BHK</option>
+																</select>
+															  </div>
+														</div>
+
+														<div class="col-sm-2">
+															<div class="form-group">
+															<label for="exampleFormControlTextarea1">Calender</label>
+															<input type="date"class="form-control" id="Calender1">
+															</div>
+														</div>
+													</div>
+																					
+
+
+
+											  <!-- <div class="row row-body" id="between-og2">
 
 													<div class="col-sm-2">
 														<div class="form-group">
@@ -393,10 +310,10 @@
 															<input name="date" type="date" class="form-control" placeholder="Pic a date...">
 														</div>
 													</div>
-												</div>
+												</div> -->
 
 												<!-- ---------------------------------------------------------between cities---------------------------------- -->
-													<div class="row row-body" id="between-alter2" style="display: none;">
+													<!-- <div class="row row-body" id="between-alter2" style="display: none;">
 														<div class="col-sm-3">
 															<div class="form-group">
 																<input name="movingfrom" type="text" class="form-control" placeholder="Current Location...">
@@ -425,7 +342,7 @@
 																<input name="date" type="date" class="form-control" placeholder="Pic a date...">
 															</div>
 														</div>
-													</div>
+													</div> -->
 													<!-- --------------------------------------------------------------between cities ------------------------------->
 											</div>
 
@@ -434,16 +351,71 @@
 
 
 											<div id="office">
-											  <div class="row row-body">
+											  <!-- <div class="row row-body">
 											  	<div class="col-sm-4 offset-2">
 											  		<input type="radio" name="citytype" id="withincity"> Within the city
 											  	</div>
 											  	<div class="col-sm-4">
 											  		<input type="radio" name="citytype" id="betweencity"> Between the city
 											  	</div>
-											  </div>
+											  </div> -->
 
+											  <div class="row row-body">
+													<div class="col-sm-4 offset-2">
+														<input type="radio" name="citytype2" id="withincity2" value="Within the city"  >&nbsp;Within City
+													</div>
+													<div class="col-sm-4">
+														<input type="radio" name="citytype2" id="betweencity2" value="Between the city" >&nbsp;Between City 
+													</div>
+											</div>
 
+										
+													<div class="row"id="within2">
+														<div class="col-sm-2" id="cityselect2">
+															<div class="form-group">
+															<label for="exampleFormControlSelect1">Select city</label>
+															<select class="form-control" id="selectcity2">
+																<option>bengalore</option>
+																<option>chennai</option>
+															</select>
+															</div>
+														</div>
+
+														<div class="col-sm-3">
+															<div class="form-group">
+															<label for="exampleFormControlInput1">From</label>
+															<input type="text" id="from2" placeholder="Origin" class="form-control">
+															</div>
+														</div>
+
+														<div class="col-sm-3">
+															<div class="form-group">
+																	<label for="exampleFormControlInput1">To</label>
+																	<input type="text" id="to2" placeholder="Destination" class="form-control">
+															</div>
+														</div>
+
+														<div class="col-sm-2">
+															<div class="form-group">
+																<label for="exampleFormControlSelect1">Move Size</label>
+																<select class="form-control" id="movesize2">
+																<option>1 BHK</option>
+																<option>2 BHK</option>
+																<option>3 BHK</option>
+																</select>
+															  </div>
+														</div>
+
+														<div class="col-sm-2">
+															<div class="form-group">
+															<label for="exampleFormControlTextarea1">Calender</label>
+															<input type="date"class="form-control" id="Calender2">
+															</div>
+														</div>
+													</div>
+												
+
+<!-- 
 											  <div class="row row-body" id="between-og3">
 
 													<div class="col-sm-2">
@@ -487,42 +459,10 @@
 															<input name="date" type="date" class="form-control" placeholder="Pic a date...">
 														</div>
 													</div>
-												</div>
+												</div> -->
 
 
 
-												<!-- ---------------------------------------------------------between cities---------------------------------- -->
-													<div class="row row-body" id="between-alter3" style="display: none;">
-														<div class="col-sm-3">
-															<div class="form-group">
-																<input name="movingfrom" type="text" class="form-control" placeholder="Current Location...">
-															</div>
-														</div>
-
-														<div class="col-sm-3">
-															<div class="form-group">
-																<input name="movingto" type="text" class="form-control" placeholder="Destination Location...">
-															</div>
-														</div>
-
-														<div class="col-sm-3">
-															<div class="form-group">
-																<select name="Property-size" type="text" class="form-control">
-																	<option value=""hidden>property size...</option>
-																	<option name="Property-size" value="1 BHK">1 BHK</option>
-																	<option name="Property-size" value="1 BHK">2 BHK</option>
-																	<option name="Property-size" value="1 BHK">3 BHK</option>
-																</select>
-															</div>
-														</div>
-
-														<div class="col-sm-3">
-															<div class="form-group">
-																<input name="date" type="date" class="form-control" placeholder="Pic a date...">
-															</div>
-														</div>
-													</div>
-													<!-- --------------------------------------------------------------between cities ------------------------------->
 												</div>											
 		                            </div>
 
@@ -532,26 +472,26 @@
 				                            		<div id="home-2">
 													  <div class="row">
 													  	<div class="col-sm-6 pic-move">
-													  		<dov class="row preferredmovers">
-													  			<input type="radio" name="picmove" value="Packers and movers" >&nbsp; Packers and movers &nbsp;
+													  		<div class="row preferredmovers">
+													  			<input type="radio" name="picmove" value="Packers and movers" required="required" >&nbsp; Packers and movers &nbsp;
 													  			
-													  		</dov>
-													  		<dov class="row preferredmovers">
-													  			<input type="radio" name="picmove"value="Moving Labours" >&nbsp; Moving Labours
-													  		</dov>
-													  		<dov class="row preferredmovers">
-													  			<input type="radio" name="picmove"value="Moving Labours, Boxes and Supplies" >&nbsp; Moving Labours, Boxes and Supplies
-													  		</dov>
-													  		<dov class="row preferredmovers">
-													  			<input type="radio" name="picmove"value="Truck Rentals" >&nbsp; Truck Rentals
-													  		</dov>
+													  		</div>
+													  		<div class="row preferredmovers">
+													  			<input type="radio" name="picmove"value="Moving Labours" required="required" >&nbsp; Moving Labours
+													  		</div>
+													  		<div class="row preferredmovers">
+													  			<input type="radio" name="picmove"value="Moving Labours, Boxes and Supplies" required="required" >&nbsp; Moving Labours, Boxes and Supplies
+													  		</div>
+													  		<div class="row preferredmovers">
+													  			<input type="radio" name="picmove"value="Truck Rentals" required="required" >&nbsp; Truck Rentals
+													  		</div>
 													  	</div>
 
 													  	<div class="col-sm-6 details">
 													  		<div class="row details-section">
 
 																<div class="col-sm-12">
-																		<table class="table" id="regtable">
+																		<table class="table" id="regtable"	>
 																				<thead>
 																				
 																				</thead>
@@ -574,14 +514,7 @@
 																			</div>
 																	</div>	
 													  			
-																<table class="table" id="regtable">
-																		<thead>
-																		
-																		</thead>
-																		<tbody>
-																	
-																		</tbody>
-																</table>
+										
 													  		</div>
 													  	</div>
 
@@ -589,72 +522,225 @@
 													</div>
 
 													<div id="vehicle-2">
-													    <div class="row">
-													  	<div class="col-sm-6 pic-move">
-													  		<dov class="row">
-													  			<input type="radio" name="picmove" value="Packers and movers">&nbsp; Packers and movers &nbsp;(Packing,Loading,Shipment,Unloading and Uploading)
-													  			
-													  		</dov>
-													  		<dov class="row">
-													  			<input type="radio" name="picmove"value="Moving Labours">&nbsp; Moving Labours
-													  		</dov>
-													  		<dov class="row">
-													  			<input type="radio" name="picmove"value="Moving Labours, Boxes and Supplies">&nbsp; Moving Labours, Boxes and Supplies
-													  		</dov>
-													  		<dov class="row">
-													  			<input type="radio" name="picmove"value="Truck Rentals">&nbsp; Truck Rentals
-													  		</dov>
-													  	</div>
+															<div class="row">
+																	<div class="col-sm-6 pic-move">
+																		<div class="row preferredmovers">
+																			<input type="radio" name="picmove1" value="Packers and movers" required="required" >&nbsp; Packers and movers &nbsp;
+																			
+																		</div>
+																		<div class="row preferredmovers">
+																			<input type="radio" name="picmove1"value="Moving Labours" required="required" >&nbsp; Moving Labours
+																		</div>
+																		<div class="row preferredmovers">
+																			<input type="radio" name="picmove1"value="Moving Labours, Boxes and Supplies" required="required" >&nbsp; Moving Labours, Boxes and Supplies
+																		</div>
+																		<div class="row preferredmovers">
+																			<input type="radio" name="picmove1"value="Truck Rentals" required="required" >&nbsp; Truck Rentals
+																		</div>
+																	</div>
+		  
+																	<div class="col-sm-6 details">
+																		<div class="row details-section">
+		  
+																		  <div class="col-sm-12">
+																				  <table class="table" id="regtable1">
+																						  <thead>
+																						  
+																						  </thead>
+																						  <tbody>
+																							  
+																						  </tbody>
+																				  </table>
+																					  <div class="row">
+																						  <div class="col-sm-12">
+																								  <div id="output1">
+		  
+																								  </div>
+																						  </div>
+																					  </div>
+																		  </div>	
+		  
+																		  <div class="col-sm-12">
+																				  <div id="googleMap1">
+		  
+																					  </div>
+																			  </div>	
+																			
+												  
+																		</div>
+																	</div>
+		  
+																</div>
 
-													  	<div class="col-sm-6 details">
-													  		<div class="row details-section">
-													  			<!-- summary section -->
-													  		</div>
-													  	</div>
-
-													  </div>
 													</div>
 
 													<div id="office-2">
-													    <div class="row">
-													  	<div class="col-sm-6 pic-move">
-													  		<dov class="row">
-													  			<input type="radio" name="picmove" value="Packers and movers">&nbsp; Packers and movers &nbsp;(Packing,Loading,Shipment,Unloading and Uploading)
-													  			
-													  		</dov>
-													  		<dov class="row">
-													  			<input type="radio" name="picmove"value="Moving Labours">&nbsp; Moving Labours
-													  		</dov>
-													  		<dov class="row">
-													  			<input type="radio" name="picmove"value="Moving Labours, Boxes and Supplies">&nbsp; Moving Labours, Boxes and Supplies
-													  		</dov>
-													  		<dov class="row">
-													  			<input type="radio" name="picmove"value="Truck Rentals">&nbsp; Truck Rentals
-													  		</dov>
-													  	</div>
-
-													  	<div class="col-sm-6 details">
-													  		<div class="row details-section">
-													  			<!-- summary section -->
-													  		</div>
-													  	</div>
-
-													  </div>
+															<div class="row">
+																	<div class="col-sm-6 pic-move">
+																		<div class="row preferredmovers">
+																			<input type="radio" name="picmove2" value="Packers and movers" required="required" >&nbsp; Packers and movers &nbsp;
+																			
+																		</div>
+																		<div class="row preferredmovers">
+																			<input type="radio" name="picmove2"value="Moving Labours" required="required" >&nbsp; Moving Labours
+																		</div>
+																		<div class="row preferredmovers">
+																			<input type="radio" name="picmove2"value="Moving Labours, Boxes and Supplies" required="required" >&nbsp; Moving Labours, Boxes and Supplies
+																		</div>
+																		<div class="row preferredmovers">
+																			<input type="radio" name="picmove2"value="Truck Rentals" required="required" >&nbsp; Truck Rentals
+																		</div>
+																	</div>
+		  
+																	<div class="col-sm-6 details">
+																		<div class="row details-section">
+		  
+																		  <div class="col-sm-12">
+																				  <table class="table" id="regtable2">
+																						  <thead>
+																						  
+																						  </thead>
+																						  <tbody>
+																							  
+																						  </tbody>
+																				  </table>
+																					  <div class="row">
+																						  <div class="col-sm-12">
+																								  <div id="output2">
+		  
+																								  </div>
+																						  </div>
+																					  </div>
+																		  </div>	
+		  
+																		  <div class="col-sm-12">
+																				  <div id="googleMap2">
+		  
+																					  </div>
+																			  </div>	
+																			
+												  
+																		</div>
+																	</div>
+		  
+																</div>					
 													</div>						
 		                            </div>
 <!-- --------------------------------------------------------------next tab----------------------------------------------------------------------------------------- -->
 		                            <div class="tab-pane" id="items">
 			                            	<h5 class="info-text"> Please tell us more about yourself.</h5>
 			                            		<div id="home-3">
-												  <h1>hi i am div home-3</h1>
+														<div class="row">
+																<div class="col-sm-6">
+																	<div class="liftableItems">
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 TV</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 4 Chairs</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Washing Machine</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Fridge</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Single Cot</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Double Cot (non storage)</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 2 Matress</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 15 Carton Box</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Iron Almirah</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Centre Table</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Sofa 3 (except recliner)</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> Water Purifier</span>
+																	</div>
+																	<small class="help-text text-info" style="color:#61ce70;">This is a tentative list of what can be fit in a
+																		vehicle.
+																		More
+																		items can be added if space is available.</small>
+																</div>
+
+																<div class="col-sm-6">
+																	<div class="row details-section">
+																			<div class="col-sm-12">
+																					<table class="table" id="regtable"	>
+																							<thead>
+																								<th>name</th>
+																							</thead>
+																							<tbody>
+																								<th id="namey"></th>
+																							</tbody>
+																					</table>
+																						<div class="row">
+																							<div class="col-sm-12">
+																									<div id="output">
+			
+																									</div>
+																							</div>
+																						</div>
+																			</div>	
+			
+																			<div class="col-sm-12">
+																					<div id="googleMap">
+			
+																						</div>
+																				</div>	
+																		
+																	</div>
+																</div>
+													</div>
 												</div>
 
 												<div id="vehicle-3">
-												  <h1>hi i am div vehicle-3</h1>
+														<div class="row">
+																<div class="col-sm-6">
+																	<div class="liftableItems">
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 TV</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 4 Chairs</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Washing Machine</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Fridge</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Single Cot</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Double Cot (non storage)</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 2 Matress</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 15 Carton Box</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Iron Almirah</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Centre Table</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Sofa 3 (except recliner)</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> Water Purifier</span>
+																	</div>
+																	<small class="help-text text-info" style="color:#61ce70;">This is a tentative list of what can be fit in a
+																		vehicle.
+																		More
+																		items can be added if space is available.</small>
+																</div>
+
+																<div class="col-sm-6">
+																	<div class="row details-section">
+																	</div>
+																</div>
+												</div>
 												</div>
 
 												<div id="office-3">
-												  <h1>hi i am div office-3</h1>
+														<div class="row">
+																<div class="col-sm-6">
+																	<div class="liftableItems">
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 TV</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 4 Chairs</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Washing Machine</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Fridge</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Single Cot</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Double Cot (non storage)</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 2 Matress</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 15 Carton Box</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Iron Almirah</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Centre Table</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> 1 Sofa 3 (except recliner)</span>
+																		<span class="badge badge-light p-2 my-2"> <input type="checkbox" name="items"> Water Purifier</span>
+																	</div>
+																	<small class="help-text text-info" style="color:#61ce70;">This is a tentative list of what can be fit in a
+																		vehicle.
+																		More
+																		items can be added if space is available.</small>
+																</div>
+
+																<div class="col-sm-6">
+																	<div class="row details-section">
+																	</div>
+																</div>
+													</div>
 												</div>											
 		                            </div>
 
@@ -662,15 +748,106 @@
 		                            <div class="tab-pane" id="getquote">
 			                            	<h5 class="info-text"> Please tell us more about yourself.</h5>
 			                            		<div id="home-4">
-												  <h1>hi i am div home-4</h1>
+														<div class="row row-body">
+			                            				
+																<div class="col-sm-6">
+																	<div class="form-group">
+																		<input name="name" type="text" class="form-control" placeholder="Your Name..." required="recquired">
+																	</div>
+		
+																	<div class="form-group">
+																		<input name="phone" type="number" class="form-control" placeholder="Your Phone..." required="recquired">	
+																	</div>
+		
+																	<div class="form-group">
+																		<input name="email" type="email" class="form-control" placeholder="Your Mail..." required="recquired">	
+																	</div>
+																	
+																</div>
+		
+																<div class="col-sm-6">
+																	<div class="row details-section">
+																			<div class="col-sm-12">
+																					<table class="table" id="regtable2">
+																							<thead>
+																							
+																							</thead>
+																							<tbody>
+																								
+																							</tbody>
+																					</table>
+																						<div class="row">
+																							<div class="col-sm-12">
+																									<div id="output2">
+			
+																									</div>
+																							</div>
+																						</div>
+																			</div>	
+			
+																			<div class="col-sm-12">
+																					<div id="googleMap2">
+			
+																						</div>
+																				</div>
+																	  </div>
+																</div>
+		
+															</div>
 												</div>
 
 												<div id="vehicle-4">
-												  <h1>hi i am div vehicle-4</h1>
+														<div class="row row-body">
+			                            				
+																<div class="col-sm-6">
+																	<div class="form-group">
+																		<input name="name" type="text" class="form-control" placeholder="Your Name..." required="recquired">
+																	</div>
+		
+																	<div class="form-group">
+																		<input name="phone" type="number" class="form-control" placeholder="Your Phone..." required="recquired">	
+																	</div>
+		
+																	<div class="form-group">
+																		<input name="email" type="email" class="form-control" placeholder="Your Mail..." required="recquired">	
+																	</div>
+																	
+																</div>
+		
+																<div class="col-sm-6">
+																	<div class="row details-section">
+																		  <!-- summary section -->
+																	  </div>
+																</div>
+		
+															</div>
 												</div>
 
 												<div id="office-4">
-												  <h1>hi i am div office-4</h1>
+														<div class="row row-body">
+			                            				
+																<div class="col-sm-6">
+																	<div class="form-group">
+																		<input name="name" type="text" class="form-control" placeholder="Your Name..." required="recquired">
+																	</div>
+		
+																	<div class="form-group">
+																		<input name="phone" type="number" class="form-control" placeholder="Your Phone..." required="recquired">	
+																	</div>
+		
+																	<div class="form-group">
+																		<input name="email" type="email" class="form-control" placeholder="Your Mail..." required="recquired">	
+																	</div>
+																	
+																</div>
+		
+																<div class="col-sm-6">
+																	<div class="row details-section">
+																		  <!-- summary section -->
+																	  </div>
+																</div>
+		
+															</div>
 												</div>											
 		                            </div>
 
@@ -680,7 +857,7 @@
 		                        <div class="wizard-footer" id="nxt-btn" style="display: none;">
 		                            <div class="pull-right">
 		                                <input type='button' style="border:none;outline: 0px" class='btn btn-next btn-fill btn-warning btn-wd' name='next' onclick="calcRoute(); onregister();" value='Next'/>
-		                                <input type='button' style="border:none;outline: 0px" class='btn btn-finish btn-fill btn-warning btn-wd' name='finish' value='Estimate Quote' />
+		                                <input type='button' style="border:none;outline: 0px" class='btn btn-finish btn-fill btn-warning btn-wd' name='finish' value='Estimate Quote' onclick="onregister1();" />
 		                            </div>
 
 		                            <div class="pull-left">
@@ -702,7 +879,7 @@
 
 											<script type="text/javascript">
 												
-												$("input:radio[id=div-1]").click(function(){
+											$("input:radio[id=div-1]").click(function(){
 											 disp1();
 											});
 											$("input:radio[id=div-2]").click(function(){
@@ -844,14 +1021,81 @@
 
 
 <script>
+		function onregister(){
+		
+			var movetype=document.querySelector('input[name=property]:checked').value;
+			if(movetype==="house"){
+				console.log(movetype);
+				console.log(1);
+				house();
+				
+			}
+			if(movetype==="Vehicle"){
+				console.log(movetype);
+				
+				vehicle();
+		
+		}
+		if(movetype==="Commercial"){
+			console.log(movetype);
+			
+				office();
+		
+		}
+		}
+		
+	
+
+
+		
+		</script>
+
+
+<script>
 
         // var detailsArray=[];
-        var objectdata={};
+		// var objectdata={};
+		// var objectdata1={};
+		
+		var object = {
+			objectdata:{},
+			objectdata1:{}
+		 }
+		
+		 
 
-        
+		 var objectbackend=JSON.stringify(object);
+		 
 
-       
-		var table=document.getElementById("regtable");
+		//  objectJSON=JSON.stringify(object);
+
+		//  {...objectdata}
+
+		//  Object.assign([],dfgh)
+
+		// var objectcol={...objectdata1}
+
+
+
+		// console.log(objectcol);
+		 
+		setTimeout(()=>{
+			console.log(object);
+			console.log(objectbackend);
+		},10000);
+
+		setTimeout(()=>{
+			var objectbackend=JSON.stringify(object);
+			console.log(objectbackend);
+			var one=object.objectdata.from;
+		 console.log(one);
+		},15000);
+
+		
+		// var namey=document.getElementById("namey").innerHTML=one;
+
+		var table= document.getElementsByTagName("TABLE")[0]
+		// var table=document.getElementById("regtable");
             var row1=table.insertRow();
             var row2=table.insertRow();
             var row3=table.insertRow();
@@ -862,16 +1106,17 @@
             var fromCell=row2.insertCell(0);
             var toCell=row3.insertCell(0);
             var moveSizeCell=row4.insertCell(0);
-            var calenderCell=row5.insertCell(0);
+			var calenderCell=row5.insertCell(0);
+		
 
-
-        // console.log(objectdata);
-
-        // var de=Object.assign({},detailsArray);s
-
-        function onregister(){
+			var count=0;
+        function house(){
 
 			
+			count++;
+			
+			
+
 			var movetype=document.querySelector('input[name=property]:checked').value;
 			
 			var citytype=document.querySelector('input[name=citytype]:checked').value;
@@ -886,17 +1131,22 @@
 
 			
 
-            var details={movetype:movetype,citytype:citytype,selectCity:selectCity,from:from,to:to,moveSize:moveSize,calender:calender};
-            var jsondetails=JSON.stringify(details);
-            // detailsArray.push(jsondetails);
+            
+			
+			
+			if(count < 2){
+				// console.log(count);
+				var details={movetype:movetype,citytype:citytype,selectCity:selectCity,from:from,to:to,moveSize:moveSize,calender:calender};
+				// var jsondetails=JSON.stringify(details);
+				// object.objectdata=jsondetails;
+				object.objectdata=details;
+				// console.log(objectdata);
+			}
+		//	else
+			// objectdata.push(jsondetails);
             
             
-            objectdata=jsondetails;
-
-            console.log(objectdata);
-
-
-       
+            // objectdata=details;
 
             selectCityCell.innerHTML= "<b>SELECT CITY:</b> &nbsp; &nbsp;" + selectCity;
             fromCell.innerHTML="<b>FROM:</b> &nbsp; &nbsp;" + from;
@@ -910,7 +1160,144 @@
             document.getElementById("movesize").value="";
             document.getElementById("Calender").value="";
 
-        }
+		}
+
+
+		var table1=document.getElementById("regtable1");
+            var row1=table1.insertRow();
+            var row2=table1.insertRow();
+            var row3=table1.insertRow();
+            var row4=table1.insertRow();
+            var row5=table1.insertRow();
+
+            var selectCityCell1=row1.insertCell(0);
+            var fromCell1=row2.insertCell(0);
+            var toCell1=row3.insertCell(0);
+            var moveSizeCell1=row4.insertCell(0);
+			var calenderCell1=row5.insertCell(0);
+
+
+
+		function vehicle(){
+			
+			console.log(2);
+			// count++;
+
+			var movetype1=document.querySelector('input[name=property]:checked').value;
+
+			
+			
+			var citytype1=document.querySelector('input[name=citytype1]:checked').value;
+
+			var selectCity1=document.getElementById("selectcity1").value;
+            var from1=document.getElementById("from1").value="qwer";
+            var to1=document.getElementById("to1").value;
+            var moveSize1=document.getElementById("movesize1").value;
+			var calender1=document.getElementById("Calender1").value;
+			
+			console.log(to1);
+			
+			
+			// if(count < 2){
+			// 	// console.log(count);
+			// 	var details1={movetype:movetype1,citytype:citytype1,selectCity:selectCity1,from:from1,to:to1,moveSize:moveSize1,calender:calender1};
+			// 	// var jsondetails=JSON.stringify(details);
+			// 	// object.objectdata=jsondetails;
+			// 	object.objectdata21=details1;
+			// 	// console.log(objectdata);
+			// }
+		//	else
+			// objectdata.push(jsondetails);
+            
+            
+            // objectdata=details;
+
+
+            selectCityCell1.innerHTML= "<b>SELECT CITY:</b> &nbsp; &nbsp;" + selectCity1;
+            fromCell1.innerHTML="<b>FROM:</b> &nbsp; &nbsp;" + from1;
+            toCell1.innerHTML= "<b>TO:</b> &nbsp; &nbsp;" + to1;
+            moveSizeCell1.innerHTML="<b>MOVE SIZE:</b> &nbsp; &nbsp;" + moveSize1;
+            calenderCell1.innerHTML="<b>DATE:</b> &nbsp; &nbsp;" + calender1;
+
+            document.getElementById("selectcity1").value="";
+            document.getElementById("from1").value="";
+            document.getElementById("to1").value="";
+            document.getElementById("movesize1").value="";
+            document.getElementById("Calender1").value="";
+		}
+
+
+		var table2=document.getElementById("regtable2");
+            var row1=table2.insertRow();
+            var row2=table2.insertRow();
+            var row3=table2.insertRow();
+            var row4=table2.insertRow();
+            var row5=table2.insertRow();
+
+            var selectCityCell2=row1.insertCell(0);
+            var fromCell2=row2.insertCell(0);
+            var toCell2=row3.insertCell(0);
+            var moveSizeCell2=row4.insertCell(0);
+			var calenderCell2=row5.insertCell(0);
+
+
+		function office(){
+			
+			console.log(3);
+
+			var movetype2=document.querySelector('input[name=property]:checked').value;
+
+			
+			
+			var citytype2=document.querySelector('input[name=citytype2]:checked').value;
+
+			var selectCity2=document.getElementById("selectcity2").value;
+            var from2=document.getElementById("from2").value="qwer";
+            var to2=document.getElementById("to2").value;
+            var moveSize2=document.getElementById("movesize2").value;
+			var calender2=document.getElementById("Calender2").value;
+			
+			console.log(to1);
+			
+			
+			// if(count < 2){
+			// 	// console.log(count);
+			// 	var details1={movetype:movetype1,citytype:citytype1,selectCity:selectCity1,from:from1,to:to1,moveSize:moveSize1,calender:calender1};
+			// 	// var jsondetails=JSON.stringify(details);
+			// 	// object.objectdata=jsondetails;
+			// 	object.objectdata21=details1;
+			// 	// console.log(objectdata);
+			// }
+		//	else
+			// objectdata.push(jsondetails);
+            
+            
+            // objectdata=details;
+
+
+            selectCityCell2.innerHTML= "<b>SELECT CITY:</b> &nbsp; &nbsp;" + selectCity2;
+            fromCell2.innerHTML="<b>FROM:</b> &nbsp; &nbsp;" + from2;
+            toCell2.innerHTML= "<b>TO:</b> &nbsp; &nbsp;" + to2;
+            moveSizeCell2.innerHTML="<b>MOVE SIZE:</b> &nbsp; &nbsp;" + moveSize2;
+            calenderCell2.innerHTML="<b>DATE:</b> &nbsp; &nbsp;" + calender2;
+
+            document.getElementById("selectcity1").value="";
+            document.getElementById("from1").value="";
+            document.getElementById("to1").value="";
+            document.getElementById("movesize1").value="";
+            document.getElementById("Calender1").value="";
+		}
+
+		
+		function onregister1(){
+			var picmove=document.querySelector('input[name=picmove]:checked').value;
+			var details1={picmove:picmove};
+			// var jsondetails1=JSON.stringify(details1);
+			// console.log(jsondetails1)
+			// object.objectdata1=jsondetails1;
+			object.objectdata1=details1;
+			// console.log(objectdata1);
+		}
         
 	</script>
 	
@@ -946,7 +1333,8 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="Scripts/jquery-3.1.1.min.js"></script>
 	<script src="Main1.js"></script>
-	<script src="Main2.js"></script>
+	<!-- <script src="Main2.js"></script>
+	<script src="Main3.js"></script> -->
 
 
 
@@ -978,3 +1366,6 @@
 	<!-- ---------------------------------calander script end-----------------------====================================================== -->
 </body>
 </html>
+
+
+

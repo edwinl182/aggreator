@@ -9,7 +9,7 @@ var mapOptions = {
 };
 
 //create map
-var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
+var map1 = new google.maps.Map(document.getElementById('googleMap1'), mapOptions);
 
 //create a DirectionsService object to use the route method and get a result for our request
 var directionsService = new google.maps.DirectionsService();
@@ -18,15 +18,15 @@ var directionsService = new google.maps.DirectionsService();
 var directionsDisplay = new google.maps.DirectionsRenderer();
 
 //bind the DirectionsRenderer to the map
-directionsDisplay.setMap(map);
+directionsDisplay.setMap(map1);
 
 
 //define calcRoute function
 function calcRoute() {
     //create request
     var request = {
-        origin: document.getElementById("from").value,
-        destination: document.getElementById("to").value,
+        origin: document.getElementById("from1").value,
+        destination: document.getElementById("to1").value,
         travelMode: google.maps.TravelMode.DRIVING, //WALKING, BYCYCLING, TRANSIT
         unitSystem: google.maps.UnitSystem.IMPERIAL
     }
@@ -36,7 +36,7 @@ function calcRoute() {
         if (status == google.maps.DirectionsStatus.OK) {
 
             //Get distance and time
-            $("#output").html("<div class='alert-info'> Driving distance: " + result.routes[0].legs[0].distance.text + ".</div>");
+            $("#output1").html("<div class='alert-info'> Driving distance: " + result.routes[0].legs[0].distance.text + ".</div>");
 
             //display route
             directionsDisplay.setDirections(result);
@@ -47,7 +47,7 @@ function calcRoute() {
             map.setCenter(myLatLng);
 
             //show error message
-            $("#output").html("<div class='alert-danger'>Could not retrieve driving distance.</div>");
+            $("#output1").html("<div class='alert-danger'>Could not retrieve driving distance.</div>");
         }
     });
 
@@ -61,8 +61,8 @@ var options = {
     componentRestrictions: {country: "IN"}
 }
 
-var input1 = document.getElementById("from");
+var input1 = document.getElementById("from1");
 var autocomplete1 = new google.maps.places.Autocomplete(input1, options);
 
-var input2 = document.getElementById("to");
+var input2 = document.getElementById("to1");
 var autocomplete2 = new google.maps.places.Autocomplete(input2, options);

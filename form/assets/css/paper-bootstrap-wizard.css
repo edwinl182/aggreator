@@ -1446,3 +1446,27 @@ input[type="button"]:focus {
   text-align: start;
 }
 
+#regtable1{
+  text-align: start;
+}
+
+#regtable2{
+  text-align: start;
+}
+
+
+
+.badge{
+  background-color: #61ce70;
+  border-radius: 0px;
+}
+.badge-light input[type="checkbox"]{
+  width: 15px;
+  height:15px;
+  background-color: transparent;
+  border:2px solid black;
+  margin: 0px;
+}
+.liftableItems{
+  text-align: left;
+}
