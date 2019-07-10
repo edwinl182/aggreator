@@ -1,5 +1,13 @@
 <?php $movedata = $this->session->userdata('movedata'); ?>
 <section class="section" class="padding-top:100px">
+	<div class="container">
+		<?php if($this->session->flashdata('success_message')): ?>
+			<div class="alert alert-success"><?= $this->session->flashdata('success_message'); ?></div>
+		<?php endif; ?>
+		<?php if($this->session->flashdata('error_message')): ?>
+			<div class="alert alert-danger"><?= $this->session->flashdata('error_message'); ?></div>
+		<?php endif; ?>
+	</div>
 	<div class="personal-info-section py-5 my-5">
 		<?php echo form_open('estimate/personal_info_validate',array('class'=>'form form-horizontal')); ?>
 		<div class="d-flex flex-row justify-content-center align-items-center">
@@ -34,11 +42,6 @@
 			<input type="submit" name="form-three-next" class="btn btn-success btn-raised" value="Next">
 		</div>
 		
-		<?php if($this->session->flashdata('message')): ?>
-			<div class="d-flex justify-content-center align-items-center mt-5">
-				<p class="text-success"><?= $this->session->flashdata('message'); ?></p>
-			</div>	
-		<?php endif; ?>
 		</form>
 	</div>
 </section>

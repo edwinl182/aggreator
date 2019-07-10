@@ -10,7 +10,7 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center mb-5">Log In</h5>
-            <?php echo form_open('user/login_validate',array('class'=>'form')); ?>
+            <?php echo form_open('login/login_validate',array('class'=>'form')); ?>
               <div class="form-group mx-2 my-5 text-center <?php if(form_error('phone')): ?>has-danger<?php endif;?>">
                 <input type="tel" name="phone" class="form-control" value="<?= set_value('phone');?>" placeholder="Phone number">
                 <span class="material-icons form-control-feedback">clear</span>

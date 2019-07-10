@@ -75,7 +75,7 @@ class Estimate extends CI_Controller
 			$movedata['new_elevator_availability'] = $this->input->post('new_elevator_availability');
 			$movedata['new_parking_dist'] = $this->input->post('new_parking_dist');
 			$this->session->set_userdata('movedata',$movedata);
-			redirect('estimate/personal_info');
+			redirect('estimate/items_info');
 		}else{
 			$this->property_info();
 		}
@@ -84,8 +84,8 @@ class Estimate extends CI_Controller
 	public function personal_info_validate(){
 		$this->form_validation->set_rules('first_name','First Name','required|trim');
 		$this->form_validation->set_rules('last_name','Last Name','required|trim');
-		$this->form_validation->set_rules('email','Email','required|trim|valid_email|is_unique[customers.email]');
-		$this->form_validation->set_rules('phone', 'Phone Number ', 'required|regex_match[/^[0-9]{10}$/]|is_unique[customers.phone]');
+		$this->form_validation->set_rules('email','Email','required|trim|valid_email');
+		$this->form_validation->set_rules('phone', 'Phone Number ', 'required|regex_match[/^[0-9]{10}$/]');
 		if($this->form_validation->run()){
 			if($this->session->userdata('movedata') && !empty($this->session->userdata('movedata'))){
 				$movedata = $this->session->userdata('movedata');
@@ -96,7 +96,8 @@ class Estimate extends CI_Controller
 			$movedata['phone'] = $this->input->post('phone');
 			$movedata['verification_key'] = md5(rand());
 			$movedata['user_id'] = "B".rand(10000,99999);
-			$data = array(
+			$this->session->set_userdata('movedata',$movedata);
+			$user_data = array(
 				'user_id' => $movedata['user_id'],
 				'first_name' => $movedata['first_name'],
 				'last_name' => $movedata['last_name'],
@@ -104,17 +105,15 @@ class Estimate extends CI_Controller
 				'phone' => $movedata['phone'],
 				'verification_key' => $movedata['verification_key']
 			);
-			$this->session->set_userdata('movedata',$movedata);
-			$result = $this->estimate_model->insert_personal_data($data);
-			if($result >= 0){
-				//$this->session->set_userdata('user_id',$movedata['user_id']);
-				$this->session->set_flashdata('message','A verification link is sent to your email. Please check your email to verify and proceed.');
-				if($this->sendEmailVerificationLink($movedata['verification_key'])){
-					redirect('estimate/personal_info');
-				}else{
-					$this->session->set_flashdata('message','There is an error sending verificaton link to your email. Please check your email and try again');
+			$insert_user_data = $this->estimate_model->insert_personal_data($user_data);
+			if($insert_user_data === true){
+				if($this->sendEmailVerificationLink($movedata)){
+					$this->session->set_flashdata('success_message','A verification link has been sent to your email. Please click on the link to verify your email address.');
 					redirect('estimate/personal_info');
 				}
+			}else{
+				$this->session->set_flashdata('error_message',$insert_user_data);
+				$this->personal_info();
 			}
 		}else{
 			$this->personal_info();
@@ -127,14 +126,21 @@ class Estimate extends CI_Controller
 			$verification_key = $this->uri->segment(3);
 			if($this->estimate_model->verify_email($verification_key)){
 				$movedata = $this->session->userdata('movedata');
-				$movedata['is_email_verified'] = true;
-				$this->session->set_userdata('movedata',$movedata); 
+				$movedata['is_email_verified'] = "yes";
+				$this->session->set_userdata('movedata',$movedata);
+				$insert_response = $this->insert_items($movedata);
+				if($insert_response === true){
+					$this->session->set_flashdata('items_success_message','Your request for quote has been received succedfully. We will get you the quotes from our trusted vendors less than 24 hours. Please login with your phone number to update your request');
+					redirect('estimate/summary');
+				}else{
+					$this->session->set_flashdata('error_message',$insert_response);
+					redirect('estimate/personal_info');
+				}
 			}else{
 				$movedata = $this->session->userdata('movedata');
-				$movedata['is_email_verified'] = false;
+				$movedata['is_email_verified'] = "no";
 				$this->session->set_userdata('movedata',$movedata); 
 			}
-			redirect('estimate/items_info');
 		}
 	}
 
@@ -160,6 +166,32 @@ class Estimate extends CI_Controller
 
 	}
 
+	public function insert_items($movedata){
+		$user_id = ($this->session->userdata('user_id')) ? $this->session->userdata('user_id') : $movedata['user_id'];
+		$finalData = array(
+			'estimate_id'=>$movedata['estimate_id'],
+			'user_id'=>$user_id,
+			'moving_from'=>$movedata['moving_from'],
+			'moving_to'=>$movedata['moving_to'],
+			'moving_on'=>$movedata['moving_date'],
+			'property_size'=>$movedata['property_size'],
+			'old_floor_no'=>$movedata['current_floor'],
+			'new_floor_no'=>$movedata['new_floor'],
+			'old_elevator_availability'=>$movedata['old_elevator_availability'],
+			'new_elevator_availability'=>$movedata['new_elevator_availability'],
+			'old_parking_distance'=>$movedata['old_parking_dist'],
+			'new_parking_distance'=>$movedata['new_parking_dist'],
+			'items'=>$movedata['items'],
+			'total_items'=>$movedata['total_items'],
+			'service_type'=>$movedata['service_type']
+		);
+		$insert_items_data = $this->estimate_model->insert_items_data($finalData);
+		if($insert_items_data === true){
+			return true;
+		}else{
+			return $insert_items_data;
+		}
+	}
 
 	public function service_type_select(){
 		$movedata = $this->session->userdata('movedata');
@@ -168,36 +200,25 @@ class Estimate extends CI_Controller
 		$this->session->set_userdata('movedata',$movedata);
 		if($this->uri->segment(3)){
 			$service_type = $this->uri->segment(3);
-			$finalData = array(
-				'estimate_id'=>$movedata['estimate_id'],
-				'user_id'=>$movedata['user_id'],
-				'moving_from'=>$movedata['moving_from'],
-				'moving_to'=>$movedata['moving_to'],
-				'moving_on'=>$movedata['moving_date'],
-				'property_size'=>$movedata['property_size'],
-				'old_floor_no'=>$movedata['current_floor'],
-				'new_floor_no'=>$movedata['new_floor'],
-				'old_elevator_availability'=>$movedata['old_elevator_availability'],
-				'new_elevator_availability'=>$movedata['new_elevator_availability'],
-				'old_parking_distance'=>$movedata['old_parking_dist'],
-				'new_parking_distance'=>$movedata['new_parking_dist'],
-				'items'=>$movedata['items'],
-				'total_items'=>$movedata['total_items'],
-				'service_type'=>$service_type
-			);
-			$result = $this->estimate_model->insert_items_data($finalData);
-			if($result === true){
-				$this->session->set_flashdata('items_success_message','Your request for quote has been received succedfully. We will get you the quotes from our trusted vendors less than 24 hours. Please login with your phone number to update your request');
-				redirect('estimate/summary');
+			$movedata['service_type'] = $service_type;
+			$this->session->set_userdata('movedata',$movedata);
+			if(!$this->session->userdata('user_id')){
+				redirect('estimate/personal_info');
 			}else{
-				$this->session->set_flashdata('error_message',$result);
-				redirect('estimate/service_type');
+				$res_result = $this->insert_items($movedata);
+				if($res_result === true){
+					$this->session->set_flashdata('items_success_message','Your request for quote has been received succedfully. We will get you the quotes from our trusted vendors less than 24 hours. Please login with your phone number to update your request');
+					redirect('estimate/summary');
+				}else{
+					$this->session->set_flashdata('error_message',$res_result);
+					redirect('estimate/personal_info');
+				}
 			}
 		}
 	}
 
 
-	function sendEmailVerificationLink($key){
+	function sendEmailVerificationLink($data){
 
         $this->load->library('phpmailer_lib');
         $mail = $this->phpmailer_lib->load();
@@ -213,11 +234,11 @@ class Estimate extends CI_Controller
         $mail->Port = 587;
         $mail->setFrom('info@boxigo.com', 'Boxigo');
         $mail->addReplyTo('info@boxigo.com', 'Boxigo');
-        $mail->addAddress($this->input->post('email'));
+        $mail->addAddress($data['email']);
         $mail->Subject = 'Please verify email for login';
         $mail->isHTML(true);
-        $mailContent = "<h4>Hi ".$this->input->post('first_name')." ".$this->input->post('last_name')."</h4>
-					<p>Please click this <a href='".base_url()."estimate/verify_email/".$key."'>link</a> to verify your email.</p>
+        $mailContent = "<h4>Hi ".$data['first_name']." ".$data['last_name']."</h4>
+					<p>Please click this <a href='".base_url()."estimate/verify_email/".$data['verification_key']."'>link</a> to verify your email.</p>
 					<p>Thanks.</p>";
         $mail->Body = $mailContent;
         $mail->SMTPOptions = array(

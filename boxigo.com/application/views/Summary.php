@@ -65,6 +65,11 @@ $movedata = $this->session->userdata('movedata');
 					</div>
 				</div>
 			</div>
+			<?php if($this->session->userdata('user_id')): ?>
+			<div class="d-flex justify-content-center">
+				<a href="<?= base_url();?>dashboard" class="btn btn-success btn-raised">Visit dashboard</a>
+			</div>
+			<?php endif; ?>
 		</div>
 	</div>
 </section>

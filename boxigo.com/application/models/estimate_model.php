@@ -2,8 +2,19 @@
 
 class Estimate_model extends CI_model{
 	function insert_personal_data($data){
-		$this->db->insert('customers',$data);
-		return $this->db->insert_id();
+		$this->db->where('email',$data['email']);
+		$this->db->or_where('phone',$data['phone']);
+		$query = $this->db->get('customers');
+		if($query->num_rows()>0){
+			return "Email or Phone number exists! If you have already made an estimate please login with your phone number to proceed";
+		}else{
+			if($this->db->insert('customers',$data)){
+				return true;
+			}else{
+				return "Error processing the information. Please try again.";
+			}
+		}
+		
 	}
 	function verify_email($key){
 		$this->db->where('verification_key',$key);
@@ -23,7 +34,6 @@ class Estimate_model extends CI_model{
 	}
 	function insert_items_data($data){
 		$this->db->where('estimate_id',$data['estimate_id']);
-		$this->db->where('user_id',$data['user_id']);
 		$query = $this->db->get('estimate');
 		if($query->num_rows() <= 0){
 			if($this->db->insert('estimate',$data)){

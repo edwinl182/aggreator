@@ -6,6 +6,7 @@ $movedata = $this->session->userdata('movedata');
 
 <section class="section" style="padding-top:100px">
 	<div class="container">
+		
 		<?php if($this->session->flashdata('error_message')): ?>
 			<p class="text-danger"><?= $this->session->flashdata('error_message'); ?></p>
 		<?php endif; ?>

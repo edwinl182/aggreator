@@ -11,4 +11,7 @@
 		Morbi leo risus
 		<span class="badge badge-primary badge-pill">1</span>
 	</li>
+	<li class="list-group-item d-flex justify-content-between align-items-center">
+		<a class="btn btn-info btn-block btn-raised" href="<?= base_url();?>estimate">Make another estimate</a>
+	</li>
 </ul>

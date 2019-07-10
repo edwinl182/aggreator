@@ -62,11 +62,11 @@
           </li>
           <li class="nav-item">
             <?php if($this->session->userdata('user_id')): ?>
-                <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="<?= base_url();?>user/logout" data-original-title="Click here to logout">
+                <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="<?= base_url();?>logout" data-original-title="Click here to logout">
                   <i class="fas fa-user-check"></i> &nbsp;Logout
                 </a>
             <?php else: ?>
-              <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="<?= base_url();?>user/login" data-original-title="Click here to login">
+              <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="<?= base_url();?>login" data-original-title="Click here to login">
                 <i class="fas fa-user-check"></i> &nbsp;Login
               </a>
             <?php endif; ?>
@@ -75,8 +75,8 @@
       </div>
     </div>
   </nav>
-  <?php if($this->router->fetch_method() == 'dashboard'): ?>
-    <section class="section mt-5">
+  <?php if($this->router->fetch_class() == 'dashboard'): ?>
+    <section class="section pt-5 mt-5">
       <div class="container">
         <div class="row">
   <?php endif; ?>

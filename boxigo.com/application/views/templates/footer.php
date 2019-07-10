@@ -1,4 +1,4 @@
-  <?php if($this->router->fetch_method() == 'dashboard'): ?>
+  <?php if($this->router->fetch_class() == 'dashboard'): ?>
         </section>
       </div>
     </div>
