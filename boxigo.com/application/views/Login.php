@@ -1,9 +1,7 @@
-<section class="section" style="padding-top: 100px">
+<section class="section">
   <div class="container">
     <?php if($this->session->flashdata('login_err_msg')): ?>
-        <div class="d-flex flex-row justify-content-center">
-          <div class="alert alert-danger"><?= $this->session->flashdata('login_err_msg'); ?></div>
-        </div>
+        <div class="alert alert-danger"><?= $this->session->flashdata('login_err_msg'); ?></div>
     <?php endif; ?>
     <div class="row">
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">

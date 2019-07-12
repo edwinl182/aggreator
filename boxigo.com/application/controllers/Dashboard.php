@@ -12,14 +12,24 @@ class Dashboard extends CI_Controller{
 			redirect('home');
 		}
 		$this->data['estimate_list'] = $this->fetch_estimates($this->session->userdata('user_id'));
+		$this->data['cancelled_list'] = $this->fetch_cancelled_estimates($this->session->userdata('user_id'));
 	}
 
 	public function index(){
 		$this->load->user_dashboard('user_dashboard',$this->data);
 	}
 
+	public function cancelled_estimates(){
+		$this->load->user_dashboard('cancelled_estimates_user',$this->data);
+	}
+
 	function fetch_estimates($id){
 		$estimates = $this->dashboard_model->fetch_estimates($id);
+		return $estimates;
+	}
+
+	function fetch_cancelled_estimates($id){
+		$estimates = $this->dashboard_model->fetch_cancelled_estimates($id);
 		return $estimates;
 	}
 }

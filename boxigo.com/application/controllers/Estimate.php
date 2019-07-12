@@ -9,6 +9,7 @@ class Estimate extends CI_Controller
 		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->library('encrypt');
+		$this->load->library('email_library');
 		$this->load->model('estimate_model');
 		$movedata = array();
 	}
@@ -58,12 +59,12 @@ class Estimate extends CI_Controller
 	}
 
 	public function property_info_validate(){
-		$this->form_validation->set_rules('current_floor','Current Floor','required|trim');
+		$this->form_validation->set_rules('current_floor','Floor Number','required|trim');
 		$this->form_validation->set_rules('old_elevator_availability','Elevator Availability','required|trim');
-		$this->form_validation->set_rules('old_parking_dist','Current Floor','required|trim');
-		$this->form_validation->set_rules('new_floor','Elevator Availability','required|trim');
-		$this->form_validation->set_rules('new_elevator_availability','Current Floor','required|trim');
-		$this->form_validation->set_rules('new_parking_dist','Elevator Availability','required|trim');
+		$this->form_validation->set_rules('old_parking_dist','Parking Distance','required|trim');
+		$this->form_validation->set_rules('new_floor','Floor Number','required|trim');
+		$this->form_validation->set_rules('new_elevator_availability','Elevator Availability','required|trim');
+		$this->form_validation->set_rules('new_parking_dist','Parking Distance','required|trim');
 		if($this->form_validation->run()){
 			if($this->session->userdata('movedata') && !empty($this->session->userdata('movedata'))){
 				$movedata = $this->session->userdata('movedata');
@@ -107,7 +108,13 @@ class Estimate extends CI_Controller
 			);
 			$insert_user_data = $this->estimate_model->insert_personal_data($user_data);
 			if($insert_user_data === true){
-				if($this->sendEmailVerificationLink($movedata)){
+				$email_body = $this->load->view('templates/email/email_verification',$movedata,true);
+				$emailData = array(
+					'to'=>$movedata['email'],
+					'subject'=>'Please verify your email',
+					'body'=> $email_body
+				);
+				if($this->email_library->send_email($emailData)){
 					$this->session->set_flashdata('success_message','A verification link has been sent to your email. Please click on the link to verify your email address.');
 					redirect('estimate/personal_info');
 				}
@@ -123,8 +130,13 @@ class Estimate extends CI_Controller
 
 	public function verify_email(){
 		if($this->uri->segment(3)){
-			$verification_key = $this->uri->segment(3);
-			if($this->estimate_model->verify_email($verification_key)){
+			echo "<pre>";
+			$arr = explode("&",$this->uri->segment(3));
+			foreach ($arr as $key => $value) {
+				list($k,$v) = explode("=", $value);
+				$param[$k] = $v;
+			}
+			if($this->estimate_model->verify_email($param)){
 				$movedata = $this->session->userdata('movedata');
 				$movedata['is_email_verified'] = "yes";
 				$this->session->set_userdata('movedata',$movedata);
@@ -137,9 +149,8 @@ class Estimate extends CI_Controller
 					redirect('estimate/personal_info');
 				}
 			}else{
-				$movedata = $this->session->userdata('movedata');
-				$movedata['is_email_verified'] = "no";
-				$this->session->set_userdata('movedata',$movedata); 
+				$this->session->set_flashdata('error_message','Invalid link or verification cannot be completed at the moment');
+				redirect('estimate');
 			}
 		}
 	}
@@ -217,43 +228,45 @@ class Estimate extends CI_Controller
 		}
 	}
 
-
-	function sendEmailVerificationLink($data){
-
-        $this->load->library('phpmailer_lib');
-        $mail = $this->phpmailer_lib->load();
-        
-        //$mail->SMTPDebug = 4; 
-        $mail->isSMTP();
-        $mail->Host     = 'smtp.gmail.com';
-        $mail->SMTPAuth = true;
-        $mail->Username = 'samnsimson@gmail.com';                 // SMTP username
-        $mail->Password = 'S@mS!mson!';                           // SMTP password
-        $mail->SMTPSecure = 'tls';  
-        $mail->SMTPAutoTLS = false;                          
-        $mail->Port = 587;
-        $mail->setFrom('info@boxigo.com', 'Boxigo');
-        $mail->addReplyTo('info@boxigo.com', 'Boxigo');
-        $mail->addAddress($data['email']);
-        $mail->Subject = 'Please verify email for login';
-        $mail->isHTML(true);
-        $mailContent = "<h4>Hi ".$data['first_name']." ".$data['last_name']."</h4>
-					<p>Please click this <a href='".base_url()."estimate/verify_email/".$data['verification_key']."'>link</a> to verify your email.</p>
-					<p>Thanks.</p>";
-        $mail->Body = $mailContent;
-        $mail->SMTPOptions = array(
-		    'ssl' => array(
-		        'verify_peer' => false,
-		        'verify_peer_name' => false,
-		        'allow_self_signed' => true
-		    )
-		);
-        if($mail->send()){
-            return true;
-        }else{
-            return false;
-        }
+	public function cancel(){
+		$delete_id = $this->uri->segment(3);
+		if(is_null($delete_id)){
+			$this->session->set_flashdata('delete_message','Unable to complete the request. Please try again');
+		}else{
+			$res = $this->estimate_model->cancel_estimate($delete_id);
+			if($res){
+				$this->session->set_flashdata('delete_message',$res);
+				redirect('dashboard');
+			}
+		}
 	}
+
+	public function resubmit(){
+		$submit_id = $this->uri->segment(3);
+		if(is_null($submit_id)){
+			$this->session->set_flashdata('delete_message','Unable to complete the request. Please try again');
+		}else{
+			$res = $this->estimate_model->resubmit_estimate($submit_id);
+			if($res){
+				$this->session->set_flashdata('delete_message',$res);
+				redirect('dashboard/cancelled_estimates');
+			}
+		}
+	}
+
+	public function delete(){
+		$delete_id = $this->uri->segment(3);
+		if(is_null($delete_id)){
+			$this->session->set_flashdata('delete_message','Unable to complete the request. Please try again');
+		}else{
+			$res = $this->estimate_model->delete_estimate($delete_id);
+			if($res){
+				$this->session->set_flashdata('delete_message',$res);
+				redirect('dashboard');
+			}
+		}
+	}
+
 }
 
 ?>

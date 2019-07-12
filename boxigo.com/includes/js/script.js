@@ -1,7 +1,6 @@
 $('.datetimepicker').datetimepicker({
     icons: {
-        format: 'LT',
-        time: "fa fa-clock-o",
+        time: "fas fa-clock",
         date: "fa fa-calendar",
         up: "fa fa-chevron-up",
         down: "fa fa-chevron-down",
@@ -12,3 +11,7 @@ $('.datetimepicker').datetimepicker({
         close: 'fa fa-remove'
     }
 });
+
+// $(function () {
+//   $('[data-toggle="tooltip"]').tooltip()
+// })

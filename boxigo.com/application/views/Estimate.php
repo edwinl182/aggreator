@@ -1,5 +1,10 @@
-<div class="section" style="padding-top:100px">
-	
+<div class="section">
+	<?php if($this->session->flashdata('success_message')): ?>
+		<div class="alert alert-success text-center"><?= $this->session->flashdata('success_message'); ?></div>
+	<?php endif; ?>
+	<?php if($this->session->flashdata('error_message')): ?>
+		<div class="alert alert-danger text-center"><?= $this->session->flashdata('error_message'); ?></div>
+	<?php endif; ?>
 	<div class="estimate-section">
 		<div class="estimate-form-one py-5">
 			<div class="d-flex justify-content-center">
@@ -18,6 +23,7 @@
 						<span class="material-icons form-control-feedback">clear</span>
 						<span class="text-danger"><?= form_error('property_size'); ?></span>
 					</div>
+					<p class="mx-2">property</p>
 				</div>
 					<div class="d-flex flex-row justify-content-center align-items-center mx-auto">
 						<p class="px-2">from</p>

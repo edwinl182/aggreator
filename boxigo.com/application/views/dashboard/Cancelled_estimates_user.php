@@ -1,4 +1,4 @@
-<div class="col-9">	
+<div class="col-9">
 <?php 
 	$userdata = $this->session->userdata('logged_user');
 	$delete_message = $this->session->flashdata('delete_message');
@@ -12,44 +12,15 @@
 	}
 ?>
 
-<div class="card-deck mb-5">
-	<div class="card">
-		<div class="card-header">Personal Info</div>
-		<div class="card-body d-flex justify-content-center align-items-center">
-			<div>
-				<h4 class="title my-0"><?= $userdata->first_name; ?> <?= $userdata->last_name; ?></h4>
-				<p class="my-0"><?= $userdata->email; ?></p>
-				<p class="my-0"><?= $userdata->phone; ?></p>
-			</div>
-		</div>
-	</div>
-	<div class="card">
-		<div class="card-header">Total Estimates</div>
-		<div class="card-body d-flex justify-content-center align-items-center">
-			<div>
-				<h1 class="title my-0"><?= $estimate_list['total']; ?></h1>
-			</div>
-		</div>
-	</div>
-	<div class="card">
-		<div class="card-header">Quotations Received</div>
-		<div class="card-body d-flex justify-content-center align-items-center">
-			<div>
-				<h1 class="title my-0">0</h1>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="card mb-5">
+<div class="card mt-5">
 	<div class="card-header">
-		<p class="card-title">Your Estimates</p>
+		<p class="card-title">Cancelled Estimates</p>
 	</div>
 	<div class="card-body">
 		<div id="accordion">
 		<?php 
-		if($estimate_list['total']>0):
-		foreach ($estimate_list['data'] as $row) { ?>
+		if($cancelled_list['total']>0):
+		foreach ($cancelled_list['data'] as $row) { ?>
 		<div class="panel">
 			<div class="card-heading" id="heading<?= $row->estimate_id; ?>">
 				<div class="d-flex flex-sm-row align-items-center my-3">
@@ -72,14 +43,11 @@
 							<span class="badge badge-info badge-pill"><?= $row->property_size; ?></span>
 						</div>
 					</div>
-					<div class="mx-2" data-toggle="tooltip" data-placement="top" title="View">
-						<span class="badge badge-info badge-pill p-2"><i class="fa fa-link"></i></span>
+					<div class="mx-2" data-toggle="tooltip" data-placement="top" title="Re-submit">
+						<a href="<?= base_url(); ?>estimate/resubmit/<?= $row->estimate_id; ?>" class="badge badge-success badge-pill p-2"><i class="fa fa-sync-alt"></i></a>
 					</div>
-					<div class="mx-2" data-toggle="tooltip" data-placement="top" title="Edit">
-						<span class="badge badge-success badge-pill p-2"><i class="fa fa-pen"></i></span>
-					</div>
-					<div class="mx-2" data-toggle="tooltip" data-placement="top" title="Cancel">
-						<a href="<?= base_url(); ?>estimate/cancel/<?= $row->estimate_id; ?>" class="badge badge-danger badge-pill p-2"><i class="fa fa-ban"></i></a>
+					<div class="mx-2" data-toggle="tooltip" data-placement="top" title="Delete">
+						<a href="<?= base_url(); ?>estimate/delete/<?= $row->estimate_id; ?>" class="badge badge-danger badge-pill p-2"><i class="fa fa-trash"></i></a>
 					</div>
 				</div>
 			</div>
@@ -99,7 +67,7 @@
 			</div>
 		</div>
 		<?php } else: ?>
-		<h4 class="text-center">You have not made any estimates.</h4>
+		<h4 class="text-center">You have no cancelled estimates.</h4>
 		<div class="d-flex flex-row justify-content-center">
 			<a href="<?= base_url(); ?>estimate" class="btn btn-info btn-raised">Make an estimate now</a>
 		</div>
