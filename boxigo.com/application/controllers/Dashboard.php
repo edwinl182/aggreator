@@ -7,7 +7,7 @@ class Dashboard extends CI_Controller{
 		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->library('encrypt');
-		$this->load->model('dashboard_model');
+		$this->load->model('Dashboard_model');
 		if(!$this->session->userdata('user_id')){
 			redirect('home');
 		}
@@ -24,12 +24,12 @@ class Dashboard extends CI_Controller{
 	}
 
 	function fetch_estimates($id){
-		$estimates = $this->dashboard_model->fetch_estimates($id);
+		$estimates = $this->Dashboard_model->fetch_estimates($id);
 		return $estimates;
 	}
 
 	function fetch_cancelled_estimates($id){
-		$estimates = $this->dashboard_model->fetch_cancelled_estimates($id);
+		$estimates = $this->Dashboard_model->fetch_cancelled_estimates($id);
 		return $estimates;
 	}
 }

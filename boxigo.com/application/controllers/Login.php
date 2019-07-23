@@ -7,7 +7,7 @@ class Login extends CI_Controller{
 		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->library('encrypt');
-		$this->load->model('user_model');
+		$this->load->model('User_model');
 		$this->movedata = $this->session->userdata('movedata');
 	}
 
@@ -24,7 +24,7 @@ class Login extends CI_Controller{
 				'phone'=>$this->input->post('phone'),
 				'otp'=>$this->input->post('otp')
 			);
-			$login_result = $this->user_model->login($login_data);
+			$login_result = $this->User_model->login($login_data);
 			if($login_result['status'] == 200){
 				$result = $login_result['result'][0];
 				foreach ($result as $key => $value) {

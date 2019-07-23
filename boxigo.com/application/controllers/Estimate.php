@@ -10,32 +10,32 @@ class Estimate extends CI_Controller
 		$this->load->library('form_validation');
 		$this->load->library('encrypt');
 		$this->load->library('email_library');
-		$this->load->model('estimate_model');
+		$this->load->model('Estimate_model');
 		$movedata = array();
 	}
 
 	public function index(){
-		$this->load->template('estimate');
+		$this->load->template('Estimate');
 	}
 
 	public function property_info(){
-		$this->load->template('property_info');
+		$this->load->template('Property_info');
 	}
 
 	public function personal_info(){
-		$this->load->template('personal_info');
+		$this->load->template('Personal_info');
 	}
 
 	public function items_info($data=null){
-		$this->load->template('items_info',$data);
+		$this->load->template('Items_info',$data);
 	}
 
 	public function service_type(){
-		$this->load->template('service_type');
+		$this->load->template('Service_type');
 	}
 
 	public function summary(){
-		$this->load->template('summary');
+		$this->load->template('Summary');
 	}
 
 	public function form_one_validate(){
@@ -106,9 +106,9 @@ class Estimate extends CI_Controller
 				'phone' => $movedata['phone'],
 				'verification_key' => $movedata['verification_key']
 			);
-			$insert_user_data = $this->estimate_model->insert_personal_data($user_data);
+			$insert_user_data = $this->Estimate_model->insert_personal_data($user_data);
 			if($insert_user_data === true){
-				$email_body = $this->load->view('templates/email/email_verification',$movedata,true);
+				$email_body = $this->load->view('templates/email/Email_verification',$movedata,true);
 				$emailData = array(
 					'to'=>$movedata['email'],
 					'subject'=>'Please verify your email',
@@ -136,7 +136,7 @@ class Estimate extends CI_Controller
 				list($k,$v) = explode("=", $value);
 				$param[$k] = $v;
 			}
-			if($this->estimate_model->verify_email($param)){
+			if($this->Estimate_model->verify_email($param)){
 				$movedata = $this->session->userdata('movedata');
 				$movedata['is_email_verified'] = "yes";
 				$this->session->set_userdata('movedata',$movedata);
@@ -196,7 +196,7 @@ class Estimate extends CI_Controller
 			'total_items'=>$movedata['total_items'],
 			'service_type'=>$movedata['service_type']
 		);
-		$insert_items_data = $this->estimate_model->insert_items_data($finalData);
+		$insert_items_data = $this->Estimate_model->insert_items_data($finalData);
 		if($insert_items_data === true){
 			return true;
 		}else{
@@ -233,7 +233,7 @@ class Estimate extends CI_Controller
 		if(is_null($delete_id)){
 			$this->session->set_flashdata('delete_message','Unable to complete the request. Please try again');
 		}else{
-			$res = $this->estimate_model->cancel_estimate($delete_id);
+			$res = $this->Estimate_model->cancel_estimate($delete_id);
 			if($res){
 				$this->session->set_flashdata('delete_message',$res);
 				redirect('dashboard');
@@ -246,7 +246,7 @@ class Estimate extends CI_Controller
 		if(is_null($submit_id)){
 			$this->session->set_flashdata('delete_message','Unable to complete the request. Please try again');
 		}else{
-			$res = $this->estimate_model->resubmit_estimate($submit_id);
+			$res = $this->Estimate_model->resubmit_estimate($submit_id);
 			if($res){
 				$this->session->set_flashdata('delete_message',$res);
 				redirect('dashboard/cancelled_estimates');
@@ -259,7 +259,7 @@ class Estimate extends CI_Controller
 		if(is_null($delete_id)){
 			$this->session->set_flashdata('delete_message','Unable to complete the request. Please try again');
 		}else{
-			$res = $this->estimate_model->delete_estimate($delete_id);
+			$res = $this->Estimate_model->delete_estimate($delete_id);
 			if($res){
 				$this->session->set_flashdata('delete_message',$res);
 				redirect('dashboard');

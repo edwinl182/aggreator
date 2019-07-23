@@ -7,7 +7,11 @@
 					<!-- <span class="badge badge-primary badge-pill">14</span> -->
 				</li>
 				<li class="list-group-item  align-items-center">
-					<a href="<?= base_url();?>dashboard/cancelled_estimates"><i class="fa fa-ban"></i> &nbsp; Cancelled Estimates</a>
+					<a href="<?= base_url();?>dashboard"><i class="fa fa-user"></i> &nbsp; My Profile</a>
+					<!-- <span class="badge badge-primary badge-pill">14</span> -->
+				</li>
+				<li class="list-group-item  align-items-center">
+					<a href="<?= base_url();?>dashboard/cancelled_estimates"><i class="fa fa-ban"></i> &nbsp; Cancelled Moves</a>
 					<span class="badge badge-primary badge-pill ml-auto"><?= $cancelled_list['total']; ?></span>
 				</li>
 				<li class="list-group-item  align-items-center">
