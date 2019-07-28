@@ -22,62 +22,21 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
-    <div class="container">
-      <div class="navbar-translate">
-        <a class="navbar-brand" href="http://boxigo.planpackersandmovers.com">
-          Boxigo </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto"><li class="dropdown nav-item">
-            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-              <i class="material-icons">group</i>&nbsp; About Us
-            </a>
+    
+    <div class="mainnav">
+      <ul class="nav justify-content-between ">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" style="font-size: 2em;color:black;">BOXIGO</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="" >
-              <i class="fas fa-tags"></i>&nbsp; Offers
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="" target="_blank" data-original-title="Have qurries? click here">
-              <i class="fas fa-hands-helping"></i>&nbsp; Customer Support
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="" target="_blank" data-original-title="Vendors, this is for you">
-              <i class="fab fa-black-tie"></i>&nbsp; For Service Providers
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank" data-original-title="Click here to login">
-              <i class="fas fa-user-check"></i>&nbsp; Login
-            </a>
-          </li>
+              <a class="nav-link active" href="#" style="font-size: 2em;color:black;">EDWIN.L</a>
+            </li>
         </ul>
       </div>
-    </div>
-  </nav>
-  <div class="page-header header-filter" data-parallax="true" style="background-image: url('assets/img/bg3.jpg')">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <div class="brand">
-            <h1 class="Small text-left">Join the online moving marketplaceGet your leads in a new way.</h1>   
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="main main-raised">
-    <div class="container" style="    margin: auto 0;">
-      <div class="section text-center bodycenter">
+
+  <div class="main main-raised ">
+    <div class="container" style=" margin: auto 0;">
+      <div class="section text-center bodycenter mainsection">
         <div class="row">
           <div class="col-md-12 ml-auto mr-auto">
             <div>
@@ -116,17 +75,17 @@
                       </div>
                     </div>
                   </div>  <!-- request -->
-                  <div class="card-body " id="drop">
+                  <div  id="drop">
                     <div class="tab-content text-center">
                       <div class="tab-pane active" id="Requests">
                             <div class="card">
-                                    <div class="card-body border border-dark">
+                                    <div class="card-body ">
                                         <div class="mdl-grid" > 
-                                            <h4 class="title">REQUST</h4>  
+                                            <h4 class="title">REQUEST</h4>  
                                           <div  v-for="(list,index) in lists" v-bind:key="list" v-bind:id="list.name" v-on:click="drop1(list.name);" class="component" >                 
                                             <div class="row d-flex justify-content-center"  >
                                               <div class="col-md-1  indexnumber">
-                                                  <p class="para">{{index + 1}}</p>
+                                                  <p class="para">{{index + 1 }}</p>
                                                   
                                               </div>
                                               <div class="col-md-3 ">
@@ -177,27 +136,25 @@
                                               <div v-bind:id="index" v-on:click="drop2(index);"  >
                                                 <div class="card card-body ">
                                                     <div class="row" >
-                                                        <div class="col ">
-                                                            <p class="para1">1 Cot</p>
+                                                        <div class="col-md-2 " v-for="item in list.items">
+                                                            <p class="para1">{{item}}</p>
                                                         </div>
-                                                        <div class="col">
+                                                        <!-- <div class="col-md-2">
                                                             <p class="para1">1 Washing MAchine</p>
                                                         </div>
-                                                        <div class="col">
+                                                        <div class="col-md-2">
                                                             <p class="para1">1 Table</p>
                                                         </div>
-                                                        <div class="col">
+                                                        <div class="col-md-2">
                                                             <p class="para1">1 Dining Table</p>
                                                         </div>
-                                                        <div class="col">
+                                                        <div class="col-md-2">
                                                             <p class="para1">1 Dressing Table</p>
                                                         </div>
-                                                        <div class="col">
+                                                        <div class="col-md-2">
                                                             <p class="para1">1 TV</p>
-                                                        </div>
-                                                        <div class="col"> 
-                                                            <p class="para1">3+2 Sofa </p>
-                                                        </div>
+                                                        </div> -->
+                                                       
                                                        
                                                       </div>
                                                 </div>
@@ -215,7 +172,7 @@
                       <!-- submit -->
                       <div class="tab-pane" id="Submitted">
                             <div class="card">
-                                    <div class="card-body border border-dark">
+                                    <div class="card-body ">
                                         <div class="mdl-grid"> 
                                             <h4 class="title">SUBMITTED</h4>                   
                                              <div  v-for="(list2,index2) in lists2" v-bind:key="list2" v-bind:id="list2.name" v-on:click="drop12(list2.name);" class="component" >                 
@@ -286,116 +243,52 @@
                                                   <br>
                                        
                                                     <div v-bind:id="index2" v-on:click="drop2(index2);"  >
-                                                      <div class="card card-body border border-dark">
+                                                      <div class="card card-body ">
                                                           <div class="row d-flex justify-content-center" >
                                                         
                                                             <div class="col-md-10">
-                                                                <div class="row d-flex justify-content-center">
+                                                                <div class="row d-flex justify-content-center ">
                                                                   <div class="col-md-2">
-                                                                    <p class="para1">Vendor</p>
+                                                                    <p class="para1 tablehead">Vendor</p>
                                                                   </div>
-                                                                  <div class="col-md-2">
+                                                                  <div class="col-md-2 tablehead">
                                                                     <p class="para1">Contatc</p>
                                                                   </div>
-                                                                  <div class="col-md-2">
+                                                                  <div class="col-md-2 tablehead">
                                                                     <p class="para1">Quote</p>
                                                                   </div>
-                                                                  <div class="col-md-2">
+                                                                  <div class="col-md-2 tablehead">
                                                                     <p class="para1">Send a remainder</p>
                                                                   </div>
-                                                                  <div class="col-md-3">
+                                                                  <div class="col-md-3 tablehead">
                                                                     <p class="para1">Call</p>
                                                                   </div>
                                                                 </div>
-                                                                <div class="row d-flex justify-content-center">
-                                                                    <div class="col-md-2">
-                                                                        <p class="para1">plan</p>
-                                                                      </div>
-                                                                      <div class="col-md-2">
-                                                                        <p class="para1">345678987</p>
-                                                                      </div>
-                                                                      <div class="col-md-2">
-                                                                        <p class="para1">20000</p>
-                                                                      </div>
-                                                                      <div class="col-md-2">
-                                                                          <p class="para1"><button class="buttonpara">Done</button></p>
-                                                                      </div>
-                                                                      <div class="col-md-3">
-                                                                        <p class="para1"><button class="buttonpara">Click To Call</button></p>
-                                                                      </div>
-                                                                </div>
-                                                                <div class="row d-flex justify-content-center">
-                                                                    <div class="col-md-2">
-                                                                        <p class="para1">plan</p>
-                                                                      </div>
-                                                                      <div class="col-md-2">
-                                                                        <p class="para1">345678987</p>
-                                                                      </div>
-                                                                      <div class="col-md-2">
-                                                                        <p class="para1">20000</p>
-                                                                      </div>
-                                                                      <div class="col-md-2">
-                                                                          <p class="para1"><button class="buttonpara">Done</button></p>
-                                                                      </div>
-                                                                      <div class="col-md-3">
-                                                                          <p class="para1"><button class="buttonpara">Click To Call</button></p>
-                                                                      </div>
-                                                                </div>
-                                                                <div class="row d-flex justify-content-center">
-                                                                    <div class="col-md-2">
-                                                                        <p class="para1">plan</p>
-                                                                      </div>
-                                                                      <div class="col-md-2">
-                                                                        <p class="para1">345678987</p>
-                                                                      </div>
-                                                                      <div class="col-md-2">
-                                                                        <p class="para1">20000</p>
-                                                                      </div>
-                                                                      <div class="col-md-2">
-                                                                          <p class="para1"><button class="buttonpara">Done</button></p>
-                                                                      </div>
-                                                                      <div class="col-md-3">
-                                                                          <p class="para1"><button class="buttonpara">Click To Call</button></p>
-                                                                      </div>
-                                                                </div>
-                                                                <div class="row d-flex justify-content-center">
-                                                                    <div class="col-md-2">
-                                                                        <p class="para1">plan</p>
-                                                                      </div>
-                                                                      <div class="col-md-2">
-                                                                        <p class="para1">345678987</p>
-                                                                      </div>
-                                                                      <div class="col-md-2">
-                                                                        <p class="para1">20000</p>
-                                                                      </div>
-                                                                      <div class="col-md-2">
-                                                                          <p class="para1"><button class="buttonpara">Done</button></p>
-                                                                      </div>
-                                                                      <div class="col-md-3">
-                                                                          <p class="para1"><button class="buttonpara">Click To Call</button></p>
-                                                                      </div>
-                                                                </div>
-                                                                <div class="row d-flex justify-content-center">
-                                                                    <div class="col-md-2">
-                                                                        <p class="para1">plan</p>
-                                                                      </div>
-                                                                      <div class="col-md-2">
-                                                                        <p class="para1">345678987</p>
-                                                                      </div>
-                                                                      <div class="col-md-2">
-                                                                        <p class="para1">20000</p>
-                                                                      </div>
-                                                                      <div class="col-md-2">
-                                                                          <p class="para1"><button class="buttonpara">Done</button></p>
-                                                                      </div>
-                                                                      <div class="col-md-3">
-                                                                          <p class="para1"><button class="buttonpara">Click To Call</button></p>
-                                                                      </div>
+
+                                                                <div class="row d-flex justify-content-center bordercall" v-for="list2 in lists2" v-for="color in colors">
+                                                                  <div class="col-md-2">
+                                                                    <p class="para1">{{list2.name}}</p>
+                                                                  </div>
+                                                                  <div class="col-md-2">
+                                                                    <p class="para1">3456543456</p>
+                                                                  </div>
+                                                                  <div class="col-md-2">
+                                                                    <p class="para1" v-bind:style="[ list2.quote !=='' ?  {border:'2px solid #4caf50'} : {border:'2px solid #f56058'}]">
+                                                                      {{ list2.quote !=='' ? list2.quote : "pending"}}
+                                                                    </p>
+                                                                  </div>
+                                                                  <div class="col-md-2" >
+                                                                    <p class="para1" >{{ list2.quote !=='' ? "Done" : "Remainder"}}</p>
+                                                                  </div>
+                                                                  <div class="col-md-3">
+                                                                    <p class=""><button class="buttonpara"><i class="fas fa-phone-volume"></i> &nbsp; Click to Call</button></p>
+                                                                    
+                                                                  </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-1" style="margin-left: 50px; ">
                                                               <div class="row">
-                                                                  <div class="col-md-12 text-center indexnumber">
+                                                                  <div class="col-md-12 text-center indexnumber tablehead">
                                                                       <p class="para1">Submitted </p>
                                                                       <p class="para1"> Time:</p>
                                                                       <p class="para1">4pm</p>
@@ -406,7 +299,7 @@
                                                               <br>
 
                                                               <div class="row">
-                                                                  <div class="col-md-12 text-center indexnumber">
+                                                                  <div class="col-md-12 text-center indexnumber tablehead">
                                                                       <p class="para1">Closed By:</p>
                                                                       
                                                                       <p class="para1">4pm</p>
@@ -430,36 +323,74 @@
 
                       <div class="tab-pane" id="Approved">
                             <div class="card">
-                                    <div class="card-body border border-dark">
+                                    <div class="card-body ">
                                         <div class="mdl-grid"> 
                                             <h4 class="title">APPROVED</h4>  
                                             <div  v-for="(list3,index3) in lists3" v-bind:key="list3" v-bind:id="list3.name"  class="component" >                 
-                                                <div class="row "  >
-                                                  <div class="col-md-1 indexnumber">
-                                                    
-                                                      {{index3 + 1}}
-                                                  </div>
-                                                  <div class="col-md-2 ">
-                                                    Moving from:<br>{{list3.name}}
-                                                  </div>
-                                                  <div class="col-md-2">
-                                                      Moving from:<br>19th, A Ejipura, BangaloreCross
-                                                  </div>
-                                                  <div class="col-md-2">
-                                                    Date of Shfting 23/06/2019
-                                                  </div>
-                                                  <div class="col-md-2">
-                                                    Moving Type 2 BHK
-                                                  </div>
-                                                  <div class="col-md-1">
-                                                    Moving Distance 50 KM
-                                                  </div>
-                                                  <div class="col-md-1">
-                                                    Total Items 25
+                                                <div class="row">
+                                                    <div class="col-md-8">
+
+                                                        <div class="row d-flex justify-content-center">
+                                                            
+                                                                <div class="col-md-1 indexnumber">
+                                                                    <p class="para">July<br>23</p>
+                                                                    
+                                                                </div>
+                                                                <div class="col-md-4 ">
+                                                                    <p class="para">Moving from:<br>19th, A Ejipura, BangaloreCross</p>
+                                                                  
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <p class="para">Moving from:<br>19th, A Ejipura, BangaloreCross</p>
+                                                                    
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <p class="para">Moving Distance 50 KM</p>
+                                                                 
+                                                                </div>
+  
+                                                        </div>
+
+                                                        <div class="row d-flex justify-content-center"  >
+                                                            <div class="col-md-1 indexnumber1">
+                                                              &nbsp;
+                                                          </div>
+                                                          <div class="col-md-4 ">
+                                                              <p class="para">Date of Shfting 23/06/2019</p>
+                                                            
+                                                          </div>
+                                                          <div class="col-md-4">
+                                                              <p class="para">Moving Type 2 BHK</p>
+                                                            
+                                                          </div>
+                                                          <div class="col-md-2">
+                                                              <p class="para">Total Items 25</p>
+                                                            
+                                                          </div>
+                                                        
+                                                         
+                                                       </div>
+
                                                     </div>
-                                                  </div>
-                         
-                                              </div>
+                                                    <div class="col-md-4">
+                                                        <div class="row">
+                                                            <div class="col-md-8 companymargin">
+                                                                <p class="paracompany">Plan Packers And Movers 
+                                                                  <br> <br>
+                                                                9487874439
+                                                                </p>
+                                                            </div>
+                                                            <div class="col-md-4 indexnumber">
+                                                                
+                                                                <p class="para">Rupees: <br>  18000 
+                                                                  
+                                                                </p>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                       </div>    
                                     </div>
                                     </div>
@@ -468,7 +399,7 @@
 					 <!-- Cancelled -->
                       <div class="tab-pane" id="Cancelled">
                             <div class="card">
-                                    <div class="card-body border border-dark">
+                                    <div class="card-body ">
                                         <div class="mdl-grid"> 
                                             <h4 class="title">CANCELLED</h4>      
                                             <div  v-for="(list4,index4) in lists4" v-bind:key="list4" v-bind:id="list4.name"  class="component" >                 

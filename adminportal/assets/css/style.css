@@ -1,3 +1,8 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
 .navbar .navbar-brand{
 	font-size: 32px;
 }
@@ -42,6 +47,15 @@ element.style {
     background: linear-gradient(60deg, #4caf50, #4caf50);
 }
 
+.mainsection{
+	margin-top: 90px;
+}
+
+.mainnav{
+	height: 8vh;
+	background-color: white;
+}
+
 .component{
 	transition: all .5s;
 	max-height: 190px;
@@ -77,11 +91,11 @@ element.style {
 	width: 93vw;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
 	.component {
 	font-size: 1em;
-	margin-bottom: 40px;
-	max-height: 150px;
+	margin-top: 40px;
+	max-height: 80px;
 	}
 	.bodycenter{
 		width: 87vw;
@@ -121,22 +135,46 @@ element.style {
 }
 
 .buttonpara{
-	font-size: 1.1rem;
+	padding: 5px;
+	font-size: 1.2rem;
 	font-weight: 400;
 	background-color: transparent;
 	box-shadow: none;
-	border: none;
+	border: 2px solid #4caf50;
 	border-radius: 5px;
 	cursor: pointer;
 	width: 100%;
+	animation: blinker 3s ease-in-out infinite;
 }
+
+@keyframes blinker{
+	0%{
+		background-color: none;
+	}
+	50%{
+		background-color: #4caf50;
+		
+	}
+	100%{
+		background-color:none;
+	}
+}
+
+.paracompany{
+	font-size: 1.8rem;
+	font-weight: 400;
+	border: 2px solid #4caf50;
+	padding: 7px;
+	border-radius: 7px;
+}
+
 
 
 @media only screen and (min-width: 300px) and (max-width: 700px) {
 	.component {
-	font-size: .8em;
+	font-size: .9em;
 	margin-bottom: 10px;
-	max-height: 500px;
+	max-height: 450px;
 	line-height: 15px;
 	}
 	.bodycenter{
@@ -146,6 +184,30 @@ element.style {
 		font-size: .8em;
 	}
 	.para1{
-		font-size: .8em;
+		font-size: .9em;
+		border: none;
+		
+		border-radius: 0px;
 	}
+	.bordercall{
+		border:1.5px solid #4caf50;
+		margin-bottom: 7px;
+		border-radius: 5px;
+
+	}
+	.tablehead{
+		display: none;
+	}
+	.buttonpara{
+		font-size: .9em;
+	}
+	.paracompany{
+		font-size: .9rem;
+		
+	}
+
+	.mainsection{
+		margin-top: 60px;
+	}
+
   }
