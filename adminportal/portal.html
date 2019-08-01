@@ -84,74 +84,74 @@
                                             <h4 class="title">REQUEST</h4>  
                                           <div  v-for="(list,index) in lists" v-bind:key="list" v-bind:id="list.name" v-on:click="drop1(list.name);" class="component" >                 
                                             <div class="row d-flex justify-content-center"  >
-                                              <div class="col-md-1  indexnumber">
+                                              <div class="col-lg-1  indexnumber">
                                                   <p class="para">{{index + 1 }}</p>
                                                   
                                               </div>
-                                              <div class="col-md-3 ">
-                                                  <p class="para">Moving from:<br>19th, A Ejipura, BangaloreCross</p>
+                                              <div class="col-lg-3 ">
+                                                  <p class="para">Moving from:<br>{{list.movingto}}</p>
                                                 
                                               </div>
-                                              <div class="col-md-3 ">
-                                                  <p class="para">Moving from:<br>19th, A Ejipura, BangaloreCross</p>
+                                              <div class="col-lg-3 ">
+                                                  <p class="para">Moving to:<br>{{list.movingto}}</p>
                                                   
                                               </div>
-                                              <div class="col-md-2 ">
-                                                  <p class="para">Moving Distance 50 KM</p>
+                                              <div class="col-lg-2 ">
+                                                  <p class="para">{{list.movingdistance}}</p>
                                                
                                               </div>
-                                              <div class="col-md-1 ">
-                                                  <p class="para">edwin</p>
+                                              <div class="col-lg-1 ">
+                                                  <p class="para">{{list.name}}</p>
                                                 
                                               </div>
-                                              <div class="col-md-1 ">
+                                              <div class="col-lg-1 ">
                                                   <button class="btn btn-primary">&nbsp; &nbsp; Edit &nbsp; </button>
                                               </div>
                                             </div>
                                             <br>
                                             <div class="row d-flex justify-content-center"  >
-                                              <div class="col-md-1 indexnumber1 ">
+                                              <div class="col-lg-1 indexnumber1 ">
                                                 &nbsp;
                                             </div>
-                                            <div class="col-md-3 ">
-                                                <p class="para">Date of Shfting 23/06/2019</p>
+                                            <div class="col-lg-3 ">
+                                                <p class="para">Date of Shfting:{{list.dateofshifting}}</p>
                                               
                                             </div>
-                                            <div class="col-md-3 ">
-                                                <p class="para">Moving Type 2 BHK</p>
+                                            <div class="col-lg-3 ">
+                                                <p class="para">Moving Type:{{list.movetype}}</p>
                                               
                                             </div>
-                                            <div class="col-md-2 ">
-                                                <p class="para">Total Items 25</p>
+                                            <div class="col-lg-2 ">
+                                                <p class="para">Total Items:{{list.totalitems}} </p>
                                               
                                             </div>
-                                            <div class="col-md-1 ">
-                                                <p class="para">6789876546</p>
+                                            <div class="col-lg-1 ">
+                                                <p class="para">{{list.number}}</p>
                                                
                                             </div>
-                                            <div class="col-md-1 ">
+                                            <div class="col-lg-1 ">
                                                 <button class="btn btn-primary">Submit</button>
                                             </div>
                                               </div>
                                               <div v-bind:id="index" v-on:click="drop2(index);"  >
                                                 <div class="card card-body ">
                                                     <div class="row" >
-                                                        <div class="col-md-2 " v-for="item in list.items">
+                                                        <div class="col-lg-2" v-for="item in list.items">
                                                             <p class="para1">{{item}}</p>
                                                         </div>
-                                                        <!-- <div class="col-md-2">
+                                                        <!-- <div class="col-lg-2">
                                                             <p class="para1">1 Washing MAchine</p>
                                                         </div>
-                                                        <div class="col-md-2">
+                                                        <div class="col-lg-2">
                                                             <p class="para1">1 Table</p>
                                                         </div>
-                                                        <div class="col-md-2">
+                                                        <div class="col-lg-2">
                                                             <p class="para1">1 Dining Table</p>
                                                         </div>
-                                                        <div class="col-md-2">
+                                                        <div class="col-lg-2">
                                                             <p class="para1">1 Dressing Table</p>
                                                         </div>
-                                                        <div class="col-md-2">
+                                                        <div class="col-lg-2">
                                                             <p class="para1">1 TV</p>
                                                         </div> -->
                                                        
@@ -177,27 +177,27 @@
                                             <h4 class="title">SUBMITTED</h4>                   
                                              <div  v-for="(list2,index2) in lists2" v-bind:key="list2" v-bind:id="list2.name" v-on:click="drop12(list2.name);" class="component" >                 
                                                 <div class="row d-flex justify-content-center"  >
-                                                    <div class="col-md-10 ">
+                                                    <div class="col-lg-10 ">
                                                         <!-- <p class="para">{{index2 + 1}}</p> -->
                                                         <div class="row">
-                                                            <div class="col-md-1 indexnumber">
-                                                                <p class="para">{{index2 + 1}}</p>
+                                                            <div class="col-lg-1 indexnumber">
+                                                                <p class="para">{{list2.name}}</p>
                                                                 
                                                             </div>
-                                                            <div class="col-md-3 ">
-                                                                <p class="para">Moving from:<br>19th, A Ejipura, BangaloreCross</p>
+                                                            <div class="col-lg-3 ">
+                                                                <p class="para">Moving from:<br>{{list2.movingfrom2}}</p>
                                                               
                                                             </div>
-                                                            <div class="col-md-3">
-                                                                <p class="para">Moving from:<br>19th, A Ejipura, BangaloreCross</p>
+                                                            <div class="col-lg-3">
+                                                                <p class="para">Moving to:<br>{{list2.movingto}}</p>
                                                                 
                                                             </div>
-                                                            <div class="col-md-3">
-                                                                <p class="para">Moving Distance 50 KM</p>
+                                                            <div class="col-lg-3">
+                                                                <p class="para">{{list2.movingdistance2}}</p>
                                                              
                                                             </div>
-                                                            <div class="col-md-2">
-                                                                <p class="para text-center">edwin1</p>
+                                                            <div class="col-lg-2">
+                                                                <p class="para text-center">{{list2.name}}</p>
                                                               
                                                             </div>
 
@@ -206,23 +206,23 @@
                                                         <br>
 
                                                             <div class="row d-flex justify-content-center"  >
-                                                                <div class="col-md-1 indexnumber1">
+                                                                <div class="col-lg-1 indexnumber1">
                                                                   &nbsp;
                                                               </div>
-                                                              <div class="col-md-3 ">
-                                                                  <p class="para">Date of Shfting 23/06/2019</p>
+                                                              <div class="col-lg-3 ">
+                                                                  <p class="para">Date of Shfting: {{list2.dateofshifting2}}</p>
                                                                 
                                                               </div>
-                                                              <div class="col-md-3">
-                                                                  <p class="para">Moving Type 2 BHK</p>
+                                                              <div class="col-lg-3">
+                                                                  <p class="para">Moving Type{{list2.movingtype2}}</p>
                                                                 
                                                               </div>
-                                                              <div class="col-md-3">
-                                                                  <p class="para">Total Items 25</p>
+                                                              <div class="col-lg-3">
+                                                                  <p class="para">Total Items{{list2.totalitems2}}</p>
                                                                 
                                                               </div>
-                                                              <div class="col-md-2">
-                                                                  <p class="para">6789876546</p>
+                                                              <div class="col-lg-2">
+                                                                  <p class="para">{{list2.number2}}</p>
                                                                 
                                                               </div>
                                                              
@@ -233,10 +233,10 @@
                                                         
                                                     </div>
                                                    
-                                                    <div class="col-md-1 text-center indexnumber">
+                                                    <div class="col-lg-1 text-center indexnumber">
                                                         <p class="para">Requested </p>
                                                         <p class="para"> Time:</p>
-                                                        <p class="para">4pm</p>
+                                                        <p class="para">{{list2.requestedtime2}}</p>
                                                         
                                                     </div>
                                                   </div>
@@ -246,49 +246,56 @@
                                                       <div class="card card-body ">
                                                           <div class="row d-flex justify-content-center" >
                                                         
-                                                            <div class="col-md-10">
-                                                                <div class="row d-flex justify-content-center ">
-                                                                  <div class="col-md-2">
+                                                            <div class="col-lg-10">
+                                                                <div class="row d-flex justify-content-center " >
+                                                                  <div class="col-lg-2">
                                                                     <p class="para1 tablehead">Vendor</p>
                                                                   </div>
-                                                                  <div class="col-md-2 tablehead">
+                                                                  <div class="col-lg-2 tablehead">
                                                                     <p class="para1">Contatc</p>
                                                                   </div>
-                                                                  <div class="col-md-2 tablehead">
+                                                                  <div class="col-lg-2 tablehead">
                                                                     <p class="para1">Quote</p>
                                                                   </div>
-                                                                  <div class="col-md-2 tablehead">
+                                                                  <div class="col-lg-2 tablehead">
                                                                     <p class="para1">Send a remainder</p>
                                                                   </div>
-                                                                  <div class="col-md-3 tablehead">
+                                                                  <div class="col-lg-3 tablehead">
                                                                     <p class="para1">Call</p>
                                                                   </div>
                                                                 </div>
 
-                                                                <div class="row d-flex justify-content-center bordercall" v-for="list2 in lists2" v-for="color in colors">
-                                                                  <div class="col-md-2">
-                                                                    <p class="para1">{{list2.name}}</p>
-                                                                  </div>
-                                                                  <div class="col-md-2">
-                                                                    <p class="para1">3456543456</p>
-                                                                  </div>
-                                                                  <div class="col-md-2">
-                                                                    <p class="para1" v-bind:style="[ list2.quote !=='' ?  {border:'2px solid #4caf50'} : {border:'2px solid #f56058'}]">
-                                                                      {{ list2.quote !=='' ? list2.quote : "pending"}}
-                                                                    </p>
-                                                                  </div>
-                                                                  <div class="col-md-2" >
-                                                                    <p class="para1" >{{ list2.quote !=='' ? "Done" : "Remainder"}}</p>
-                                                                  </div>
-                                                                  <div class="col-md-3">
-                                                                    <p class=""><button class="buttonpara"><i class="fas fa-phone-volume"></i> &nbsp; Click to Call</button></p>
+                                                                <div class="col-lg-12 text-center" v-if="list2.vendors2==''" >
+
+                                                                  <h1>No Nearest Vendors Founded Yet </h1>
+
+                                                                </div>
+
+                                                                <div class="row d-flex justify-content-center bordercall" v-for="vendors in list2.vendors2" >
                                                                     
-                                                                  </div>
+                                                                    <div class="col-lg-2" v-if="vendors!=''">
+                                                                      <p class="para1">{{vendors.name}}</p>
+                                                                    </div>
+                                                                    <div class="col-lg-2" v-if="vendors!=''">
+                                                                      <p class="para1">{{vendors.contact}}</p>
+                                                                    </div>
+                                                                    <div class="col-lg-2" v-if="vendors!=''">
+                                                                      <p class="para1" v-bind:style="[ vendors.quote !=='' ?  {border:'2px solid #4caf50'} : {border:'2px solid #f56058'}]">
+                                                                        {{ vendors.quote !=='' ?  vendors.quote : "pending"}}
+                                                                      </p>
+                                                                    </div>
+                                                                    <div class="col-lg-2" v-if="vendors!=''">
+                                                                      <p class="para1" >{{ vendors.quote !=='' ? "Done" : "Remainder"}}</p>
+                                                                    </div>
+                                                                    <div class="col-lg-3" v-if="vendors!=''">
+                                                                      <p class=""><button class="buttonpara"><i class="fas fa-phone-volume"></i> &nbsp; Click to Call</button></p>
+                                                                    </div>
+                                                                  
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-1" style="margin-left: 50px; ">
+                                                            <div class="col-lg-1" style="margin-left: 50px; ">
                                                               <div class="row">
-                                                                  <div class="col-md-12 text-center indexnumber tablehead">
+                                                                  <div class="col-lg-12 text-center indexnumber tablehead">
                                                                       <p class="para1">Submitted </p>
                                                                       <p class="para1"> Time:</p>
                                                                       <p class="para1">4pm</p>
@@ -299,7 +306,7 @@
                                                               <br>
 
                                                               <div class="row">
-                                                                  <div class="col-md-12 text-center indexnumber tablehead">
+                                                                  <div class="col-lg-12 text-center indexnumber tablehead">
                                                                       <p class="para1">Closed By:</p>
                                                                       
                                                                       <p class="para1">4pm</p>
@@ -328,43 +335,43 @@
                                             <h4 class="title">APPROVED</h4>  
                                             <div  v-for="(list3,index3) in lists3" v-bind:key="list3" v-bind:id="list3.name"  class="component" >                 
                                                 <div class="row">
-                                                    <div class="col-md-8">
+                                                    <div class="col-lg-8">
 
                                                         <div class="row d-flex justify-content-center">
                                                             
-                                                                <div class="col-md-1 indexnumber">
-                                                                    <p class="para">July<br>23</p>
+                                                                <div class="col-lg-1 indexnumber">
+                                                                    <p class="para">{{list3.dateofshifting3}}</p>
                                                                     
                                                                 </div>
-                                                                <div class="col-md-4 ">
-                                                                    <p class="para">Moving from:<br>19th, A Ejipura, BangaloreCross</p>
+                                                                <div class="col-lg-4 ">
+                                                                    <p class="para">Moving from:<br>{{list3.movingfrom3}}</p>
                                                                   
                                                                 </div>
-                                                                <div class="col-md-4">
-                                                                    <p class="para">Moving from:<br>19th, A Ejipura, BangaloreCross</p>
+                                                                <div class="col-lg-4">
+                                                                    <p class="para">Moving to:<br>{{list3.movingto3}}</p>
                                                                     
                                                                 </div>
-                                                                <div class="col-md-2">
-                                                                    <p class="para">Moving Distance 50 KM</p>
+                                                                <div class="col-lg-2">
+                                                                    <p class="para">{{list3.movingdistance3}}</p>
                                                                  
                                                                 </div>
   
                                                         </div>
 
                                                         <div class="row d-flex justify-content-center"  >
-                                                            <div class="col-md-1 indexnumber1">
+                                                            <div class="col-lg-1 indexnumber1">
                                                               &nbsp;
                                                           </div>
-                                                          <div class="col-md-4 ">
-                                                              <p class="para">Date of Shfting 23/06/2019</p>
+                                                          <div class="col-lg-4 ">
+                                                              <p class="para">Date of Shfting:{{list3.dateofshifting3}}</p>
                                                             
                                                           </div>
-                                                          <div class="col-md-4">
-                                                              <p class="para">Moving Type 2 BHK</p>
+                                                          <div class="col-lg-4">
+                                                              <p class="para">Moving Type:{{list3.movetype3}}</p>
                                                             
                                                           </div>
-                                                          <div class="col-md-2">
-                                                              <p class="para">Total Items 25</p>
+                                                          <div class="col-lg-2">
+                                                              <p class="para">Total Items:{{list3.totalitems3}}</p>
                                                             
                                                           </div>
                                                         
@@ -372,17 +379,17 @@
                                                        </div>
 
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-lg-4">
                                                         <div class="row">
-                                                            <div class="col-md-8 companymargin">
-                                                                <p class="paracompany">Plan Packers And Movers 
+                                                            <div class="col-lg-8 companymargin">
+                                                                <p class="paracompany">{{list3.companyconformedfor3}}
                                                                   <br> <br>
-                                                                9487874439
+                                                                {{list3.numberofcompany3}}
                                                                 </p>
                                                             </div>
-                                                            <div class="col-md-4 indexnumber">
+                                                            <div class="col-lg-4 indexnumber">
                                                                 
-                                                                <p class="para">Rupees: <br>  18000 
+                                                                <p class="para">Rupees: <br> {{list3.amount3}}
                                                                   
                                                                 </p>
                                                             </div>
@@ -404,23 +411,23 @@
                                             <h4 class="title">CANCELLED</h4>      
                                             <div  v-for="(list4,index4) in lists4" v-bind:key="list4" v-bind:id="list4.name"  class="component" >                 
                                                 <div class="row d-flex justify-content-center"  >
-                                                    <div class="col-md-10 ">
+                                                    <div class="col-lg-10 ">
                                                         <!-- <p class="para">{{index2 + 1}}</p> -->
                                                         <div class="row">
-                                                            <div class="col-md-1 indexnumber">
+                                                            <div class="col-lg-1 indexnumber">
                                                                 <p class="para">{{index4 + 1}}</p>
                                                                 
                                                             </div>
-                                                            <div class="col-md-4 ">
-                                                                <p class="para">Moving from:<br>19th, A Ejipura, BangaloreCross</p>
+                                                            <div class="col-lg-4 ">
+                                                                <p class="para">Moving from:{{list4.movingfrom4}}<br></p>
                                                               
                                                             </div>
-                                                            <div class="col-md-4">
-                                                                <p class="para">Moving from:<br>19th, A Ejipura, BangaloreCross</p>
+                                                            <div class="col-lg-4">
+                                                                <p class="para">Moving to:<br>{{list4.movingto4}}</p>
                                                                 
                                                             </div>
-                                                            <div class="col-md-3">
-                                                                <p class="para">Moving Distance 50 KM</p>
+                                                            <div class="col-lg-3">
+                                                                <p class="para">{{list4.movingdistance4}}</p>
                                                              
                                                             </div>
                                                            
@@ -430,19 +437,19 @@
                                                         <br>
 
                                                             <div class="row d-flex justify-content-center"  >
-                                                                <div class="col-md-1 indexnumber1">
+                                                                <div class="col-lg-1 indexnumber1">
                                                                   &nbsp;
                                                               </div>
-                                                              <div class="col-md-4 ">
-                                                                  <p class="para">Date of Shfting 23/06/2019</p>
+                                                              <div class="col-lg-4 ">
+                                                                  <p class="para">Date of Shfting:{{list4.dateofshifting4}}</p>
                                                                 
                                                               </div>
-                                                              <div class="col-md-4">
-                                                                  <p class="para">Moving Type 2 BHK</p>
+                                                              <div class="col-lg-4">
+                                                                  <p class="para">Moving Type{{list4.movingtype4}}</p>
                                                                 
                                                               </div>
-                                                              <div class="col-md-3">
-                                                                  <p class="para">Total Items 25</p>
+                                                              <div class="col-lg-3">
+                                                                  <p class="para">Total Items:{{list4.totalitems4}}</p>
                                                                 
                                                               </div>
                                                              
@@ -454,10 +461,10 @@
                                                         
                                                     </div>
                                                    
-                                                    <div class="col-md-1 text-center indexnumber">
+                                                    <div class="col-lg-1 text-center indexnumber">
                                                         <p class="para">Cancelled </p>
                                                         <p class="para"> On</p>
-                                                        <p class="para">4pm</p>
+                                                        <p class="para">{{list4.Cancelledon4}}</p>
                                                         
                                                     </div>
                                                   </div>

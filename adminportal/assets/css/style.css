@@ -62,7 +62,7 @@ element.style {
     overflow: hidden;
 	margin-bottom: 15px;
 	font-size: 1.2rem;
-	border-radius: 10px;
+	border-radius: 5px;
 	padding: 34px;
 	box-shadow: .5px .5px 5px grey;
 }
@@ -161,10 +161,10 @@ element.style {
 }
 
 .paracompany{
-	font-size: 1.8rem;
+	font-size: 1.5rem;
 	font-weight: 400;
 	border: 2px solid #4caf50;
-	padding: 7px;
+	padding: 10px;
 	border-radius: 7px;
 }
 
@@ -203,6 +203,53 @@ element.style {
 	}
 	.paracompany{
 		font-size: .9rem;
+		
+	}
+
+	.mainsection{
+		margin-top: 60px;
+	}
+
+  }
+
+
+  @media only screen and (min-width:760px) and (max-width: 1200px) {
+	.component {
+	font-size: 1.7em;
+
+		margin-bottom: 10px;
+	max-height: 630px;
+	line-height: 27px;
+	}
+	.bodycenter{
+		width: 87vw;
+	}
+	.btn.btn-primary{
+		font-size: .8em;
+	}
+	.para1{
+		font-size: 1.7em;
+
+			border: none;
+		
+		border-radius: 0px;
+	}
+	.bordercall{
+		border:1.5px solid #4caf50;
+		margin-bottom: 7px;
+		border-radius: 5px;
+
+	}
+	.tablehead{
+		display: none;
+	}
+	.buttonpara{
+		font-size: 1.7em;
+
+		}
+	.paracompany{
+		font-size: 1.7em;
+			
 		
 	}
 
